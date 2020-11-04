@@ -58,6 +58,32 @@ fetch('https://api.themoviedb.org/3/discover/movie?api_key=a05fba96f4d3bad807d07
         genreName(x, x.genre_ids[0]);
         document.getElementById("cardList").innerHTML += `<li>${movieCase(x.poster, x.name, x.year, x.genre_name)}</li>`;
     });
+
 });
 
+let featuresButtons = [0, 28, 35, 18, 99, 27, 10751, 80, 14]
+console.log(featuresButtons);
 
+currentFeatured = [];
+featuresButtons.forEach((x, i) => {
+    document.getElementsByClassName("btn_featuredMovie")[i].addEventListener("click", () => {
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1${x == 0 ? "" : `&with_genres=${x}`}`).then(response => response.json()).then(data => {
+            document.getElementById("featuredList").innerHTML = "";
+            currentFeatured = [];
+            for (let i = 0; i < 12; i++) {
+                currentFeatured.push({
+                    "id" : data.results[i].id,
+                    "poster" : data.results[i].poster_path,
+                    "name" : data.results[i].title,
+                    "year" : data.results[i].release_date.substring(0, 4),
+                    "genre_ids" : data.results[i].genre_ids
+                })
+            };
+            
+            currentFeatured.forEach(x => {
+                genreName(x, x.genre_ids[0]);
+                document.getElementById("featuredList").innerHTML += `<li>${movieCase(x.poster, x.name, x.year, x.genre_name)}</li>`;
+            });
+        });
+    })
+})
