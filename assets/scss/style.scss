@@ -1,17 +1,28 @@
 // @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rye&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
 $primaryColor : #FE4240;
+$titleColor : #4f5354;
 
 body, li, ul {
   margin : 0;
   padding : 0;
 }
 
+h2 {
+  color : $titleColor
+}
+
 .btn {
-  background-color: $primaryColor;
+  border-radius: 0px;
   color: white;
 }
 
 .loginNavbar {
   background-color: $primaryColor;
+}
+
+.btn_featuredMovie {
+  margin-right: 3px;
+  background-color: #f2f0f1;
+  color: $titleColor;
 }
