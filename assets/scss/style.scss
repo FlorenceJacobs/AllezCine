@@ -68,8 +68,13 @@ nav.navbar h1 a{
   object-position: 50% 50%;
 }
 
+.carousel-inner {
+  position : relative;
+}
+
 .carousel-caption {
-  margin-bottom: 5rem;
+  position: absolute;
+  top: 40%;
 }
 
 /*LOGIN NAVBAR*/
