@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Rye&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
-body, li, ul {
+/*RESET*/
+body, li, ul, .jumbotron {
   margin: 0;
   padding: 0;
 }
@@ -9,6 +11,7 @@ a {
   color: inherit;
 }
 
+/*BODY*/
 h2 {
   color: #4f5354;
 }
@@ -17,14 +20,30 @@ h2 {
   border-radius: 0px;
 }
 
-.titleRed {
+.red {
   color: #FE4240;
 }
 
-.loginNavbar {
+.bold {
+  font-weight: 600;
+}
+
+/*NAVIGATION*/
+nav.navbar {
+  position: absolute;
+  z-index: 1;
+}
+
+nav.navbar h1 a {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.nav-item .active {
   background-color: #FE4240;
 }
 
+/*JUMBOTRON- CAROUSEL*/
 .carousel-inner .btn {
   color: white;
   background-color: #FE4240;
@@ -34,4 +53,20 @@ h2 {
   margin-right: 3px;
   background-color: #f2f0f1;
   color: #4f5354;
+}
+
+.carousel-item img {
+  height: 70vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.carousel-caption {
+  margin-bottom: 5rem;
+}
+
+/*LOGIN NAVBAR*/
+.loginNavbar {
+  background-color: #FE4240;
 }
