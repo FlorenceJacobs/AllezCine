@@ -4,11 +4,21 @@ body, li, ul {
   padding: 0;
 }
 
+h2 {
+  color: #4f5354;
+}
+
 .btn {
-  background-color: #FE4240;
+  border-radius: 0px;
   color: white;
 }
 
 .loginNavbar {
   background-color: #FE4240;
+}
+
+.btn_featuredMovie {
+  margin-right: 3px;
+  background-color: #f2f0f1;
+  color: #4f5354;
 }

@@ -1,1 +1,0 @@
-$('#moviePLaying1').modal('show')
