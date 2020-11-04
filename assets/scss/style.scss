@@ -90,3 +90,47 @@ nav.navbar h1 a{
 .loginNavbar {
   background-color: $primaryColor;
 }
+
+/*MOVIE PLAYING CARD*/
+
+.moviePlayingCard {
+  margin-left : .7rem;
+  margin-top: 6rem;
+}
+
+#cardList {
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 5px;
+}
+
+/*SOCIAL NETWORK BUTTONS*/
+
+.socialButtons {
+  z-index : 100;
+  position : fixed;
+  top : 80vh;
+
+    .sw_btn {
+      display : block;
+      width : 15rem;
+      cursor: pointer;
+      color: white;
+      font-size: 0.9rem;
+      line-height: 2rem;
+      margin-bottom: 2px;
+      border-radius : 5rem;
+    }
+
+    .facebook {
+      background-color: #3c5f95;
+    }
+    .instagram {
+      background-color: #f34a8d;
+    }
+    .twitter {
+      background-color: #1ca2f7;
+    }
+    .google {
+      background-color: #d14b3f;
+    }
+}

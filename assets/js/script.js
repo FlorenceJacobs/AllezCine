@@ -13,7 +13,7 @@
 
 function movieCase(poster, name, year, genre) {
     let film;
-    film = `<div class="card" style="width: 11rem" data-toggle="modal" data-target="#moviePLayingCard">`;
+    film = `<div class="card moviePlayingCard" style="width: 11rem" data-toggle="modal" data-target="#moviePLayingCard">`;
     film += `<img class="card-img-top" src="https://image.tmdb.org/t/p/w500${poster}" alt="CardImageCap">` 
     film += `<h3 class="card-title">${name}</h3>`;
     film += `<div class="d-flex justify-content-between"><p class="card-text m-0">${year}</p>`

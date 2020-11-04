@@ -83,3 +83,43 @@ nav.navbar h1 a {
 .loginNavbar {
   background-color: #FE4240;
 }
+
+/*MOVIE PLAYING CARD*/
+.moviePlayingCard {
+  margin-left: 0.7rem;
+  margin-top: 6rem;
+}
+
+#cardList {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+/*SOCIAL NETWORK BUTTONS*/
+.socialButtons {
+  z-index: 100;
+  position: fixed;
+  top: 80vh;
+}
+.socialButtons .sw_btn {
+  display: block;
+  width: 15rem;
+  cursor: pointer;
+  color: white;
+  font-size: 0.9rem;
+  line-height: 2rem;
+  margin-bottom: 2px;
+  border-radius: 5rem;
+}
+.socialButtons .facebook {
+  background-color: #3c5f95;
+}
+.socialButtons .instagram {
+  background-color: #f34a8d;
+}
+.socialButtons .twitter {
+  background-color: #1ca2f7;
+}
+.socialButtons .google {
+  background-color: #d14b3f;
+}
