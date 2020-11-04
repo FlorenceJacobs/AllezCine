@@ -24,12 +24,14 @@ function movieCase(poster, name, year, genre) {
 
 let genreList = [];
     
+//générer genreList
 fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US').then(response => response.json()).then(data => {
     data.genres.forEach(x => {
         genreList.push({"id": x.id, "name": x.name})
     });
 });
 
+//nommer les genres avec les ids
 function genreName(object, id) {
     genreList.forEach(x => {
         if (id == x.id) {
@@ -40,7 +42,7 @@ function genreName(object, id) {
 
 
 let exampleCards = [];
-
+//afficher exampleCards
 fetch('https://api.themoviedb.org/3/discover/movie?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_crew=608&with_companies=10342').then(response => response.json()).then(data => {
     for (let i = 0; i < 5; i++) {
         exampleCards.push({
