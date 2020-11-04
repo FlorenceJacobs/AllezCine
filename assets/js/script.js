@@ -12,14 +12,14 @@
 
 
 function movieCase(poster, name, year, genre) {
-    let film;
+    let a;
     film = `<div class="card" style="width: 11rem" data-toggle="modal" data-target="#moviePLayingCard">`;
     film += `<img class="card-img-top" src="https://image.tmdb.org/t/p/w500${poster}" alt="CardImageCap">` 
     film += `<h3 class="card-title">${name}</h3>`;
     film += `<div class="d-flex justify-content-between"><p class="card-text m-0">${year}</p>`
     film += `<p class="m-0">${genre}</p>`
     film += `</div></div>`
-    return film;
+    return a;
 }
 
 let exampleCards = [];
@@ -34,6 +34,7 @@ fetch('https://api.themoviedb.org/3/discover/movie?api_key=a05fba96f4d3bad807d07
         })
     }
     console.log(exampleCards);
+    exampleCards.forEach(x => document.getElementById("cardList").innerHTML += movieCase(x.poster, x.name, x.year, x.genre_ids[0]))
 });
 
 
