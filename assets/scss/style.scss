@@ -52,19 +52,27 @@ li.nav-item {
   background-color: rgba(255, 255, 255, 0.116);
   margin-right: 3px;
   font-size: 0.9rem;
+  &.active {
+    background-color: $primaryColor;
+    color: white;
+  }
   &:first-child {
     background-color: rgba(255, 255, 255, 0)
   }
   &:last-child {
     background-color: rgba(255, 255, 255, 0);
   }
-  &.active {
-    background-color: $primaryColor;
-  }
+}
+input.form-control {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
 }
 
-.navbar-toggler{
-	background-color: #fff;
+.searchConcat {
+  display : inline-block;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.39);
+  color: rgb(161, 161, 161)
 }
 
 /*JUMBOTRON- CAROUSEL*/
@@ -85,7 +93,7 @@ li.nav-item {
   width: 100%;
   object-fit: cover;
   object-position: 50% 50%;
-  filter: brightness(0.40);
+  filter: brightness(0.65);
 }
 
 .carousel-inner {
