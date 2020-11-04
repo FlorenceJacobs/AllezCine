@@ -4,16 +4,29 @@ body, li, ul {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 h2 {
   color: #4f5354;
 }
 
 .btn {
   border-radius: 0px;
-  color: white;
+}
+
+.titleRed {
+  color: #FE4240;
 }
 
 .loginNavbar {
+  background-color: #FE4240;
+}
+
+.carousel-inner .btn {
+  color: white;
   background-color: #FE4240;
 }
 

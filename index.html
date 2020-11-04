@@ -20,7 +20,7 @@
             <div class="row">
                 <!--Navbar-->
                 <nav class="col navbar navbar-expand-md navbar-dark bg-dark"> <!--bg-transparent-->
-                    <h1 class="navbar-brand"><a herf="#">ALLEZ CINE!</a></h1>
+                    <h1 class="navbar-brand"><a herf="#"><span class="titleRed">ALLEZ</span> CINE!</a></h1>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -165,7 +165,10 @@
                 <div class="row mx-0 my-4">
                     <!--Movie Playing Card-->
                     <article class="col-10 offset-1">
-                        <div class="card" style="width: 11rem" data-toggle="modal" data-target="#moviePLayingCard">
+                        <ul id="cardList">
+                            LIST de CARDS EN SCRIPT ID = cardList
+                        </ul>
+                        <!-- <div class="card" style="width: 11rem" data-toggle="modal" data-target="#moviePLayingCard">
                             <img class="card-img-top" src="assets/images/download.jpeg" alt="CardImageCap">
                             <div class="card-body">
                                 <h3 class="card-title">Card title</h3>
@@ -174,7 +177,7 @@
                                     <p class="m-0">Genre</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Movie Playing Modal-->
                         <div class="modal fade" id="#moviePLayingCard" tabindex="-1" role="dialog" aria-labelledby="moviePLayingCardLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -242,8 +245,13 @@
                             <button value="8" type="button" class="btn btn_featuredMovie">Crime</button>
                             <button value="8" type="button" class="btn btn_featuredMovie">Fantasy</button>
                         </div>
+                        <div>
+                            <ul id="featuredList">
+                                LIST de CARDS EN SCRIPT ID = featuredList
+                            </ul>
+                        </div>
                     </div>
-                    <div>
+                    <div class="col-12 p-0">
                         <button type="button" class="btn">MORE FILMS</button>
                     </div>
                 </div>
