@@ -1,3 +1,3 @@
 "use strict";
 
-$('#myModal').modal('show');
+$('#moviePLaying1').modal('show');
