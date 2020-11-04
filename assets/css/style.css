@@ -123,3 +123,8 @@ nav.navbar h1 a {
 .socialButtons .google {
   background-color: #d14b3f;
 }
+
+/*FEATURED MOVIES*/
+#featuredList div {
+  margin-left: 0.3rem;
+}
