@@ -108,7 +108,7 @@ nav.navbar h1 a{
 .socialButtons {
   z-index : 100;
   position : fixed;
-  top : 80vh;
+  top : 70vh;
 
     .sw_btn {
       display : block;
@@ -116,7 +116,7 @@ nav.navbar h1 a{
       cursor: pointer;
       color: white;
       font-size: 0.9rem;
-      line-height: 2rem;
+      line-height: 2.3rem;
       margin-bottom: 2px;
       border-radius : 5rem;
     }
@@ -132,6 +132,14 @@ nav.navbar h1 a{
     }
     .google {
       background-color: #d14b3f;
+    }
+    .whiteRound {
+      display: block;
+      background-color: white;
+      border-radius: 20px;
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-right: 0.3rem;
     }
 }
 
