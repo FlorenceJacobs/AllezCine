@@ -12,25 +12,35 @@
 
 
 function movieCase(poster, name, year, genre) {
-<<<<<<< HEAD
-    let a;
-=======
     let film;
->>>>>>> 597bec156292e38b6aad1d85bbcaa3b11dbc127f
     film = `<div class="card" style="width: 11rem" data-toggle="modal" data-target="#moviePLayingCard">`;
     film += `<img class="card-img-top" src="https://image.tmdb.org/t/p/w500${poster}" alt="CardImageCap">` 
     film += `<h3 class="card-title">${name}</h3>`;
     film += `<div class="d-flex justify-content-between"><p class="card-text m-0">${year}</p>`
     film += `<p class="m-0">${genre}</p>`
     film += `</div></div>`
-<<<<<<< HEAD
-    return a;
-=======
     return film;
->>>>>>> 597bec156292e38b6aad1d85bbcaa3b11dbc127f
 }
 
+let genreList = [];
+    
+fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US').then(response => response.json()).then(data => {
+    data.genres.forEach(x => {
+        genreList.push({"id": x.id, "name": x.name})
+    });
+});
+
+function genreName(object, id) {
+    genreList.forEach(x => {
+        if (id == x.id) {
+            object.genre_name = x.name
+        }
+    })
+}
+
+
 let exampleCards = [];
+
 fetch('https://api.themoviedb.org/3/discover/movie?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_crew=608&with_companies=10342').then(response => response.json()).then(data => {
     for (let i = 0; i < 5; i++) {
         exampleCards.push({
@@ -41,11 +51,11 @@ fetch('https://api.themoviedb.org/3/discover/movie?api_key=a05fba96f4d3bad807d07
             "genre_ids" : data.results[i].genre_ids
         })
     }
-    console.log(exampleCards);
-<<<<<<< HEAD
-    exampleCards.forEach(x => document.getElementById("cardList").innerHTML += movieCase(x.poster, x.name, x.year, x.genre_ids[0]))
-=======
->>>>>>> 597bec156292e38b6aad1d85bbcaa3b11dbc127f
+    
+    exampleCards.forEach(x => {
+        genreName(x, x.genre_ids[0]);
+        document.getElementById("cardList").innerHTML += `<li>${movieCase(x.poster, x.name, x.year, x.genre_name)}</li>`;
+    });
 });
 
 
