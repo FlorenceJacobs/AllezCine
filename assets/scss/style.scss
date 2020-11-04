@@ -9,6 +9,10 @@ body, li, ul, .jumbotron {
   padding : 0;
 }
 
+li, ul {
+  list-style: none;
+}
+
 a {
   text-decoration : none;
   color : inherit;
@@ -46,6 +50,10 @@ nav.navbar h1 a{
 
 .nav-item .active {
   background-color: $primaryColor;
+}
+
+.navbar-toggler{
+	background-color: #fff;
 }
 
 /*JUMBOTRON- CAROUSEL*/
