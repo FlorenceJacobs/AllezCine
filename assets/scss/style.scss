@@ -49,7 +49,7 @@ nav.navbar h1 a{
 }
 
 li.nav-item {
-  background-color: rgba(255, 255, 255, 0.116);
+  background-color: rgba(255, 255, 255, 0);
   margin-right: 3px;
   font-size: 0.9rem;
   &.active {
@@ -63,6 +63,13 @@ li.nav-item {
     background-color: rgba(255, 255, 255, 0);
   }
 }
+
+.firstNavbar .loginNavbar li.nav-item > a:hover {
+  background-color: rgb(255, 255, 255);
+  color: #4f5354;
+}
+
+/*INPUT SEARCH*/
 input.form-control {
   background-color: rgba(255, 255, 255, 0);
   border: none;
@@ -122,17 +129,17 @@ input.form-control {
       background-color: black;
       font-size: 0.8rem;
       margin-left: 0.5rem;
-      &:hover {
-        color: white;
-      }
     }
+}
+.loginNavbar li.nav-item > a:hover {
+  background-color: rgb(255, 255, 255);
+  color: #4f5354;
 }
 
 /*MOVIE PLAYING CARD*/
 
 .moviePlayingCard {
   margin-left : .7rem;
-  margin-top: 6rem;
 }
 
 #cardList {
