@@ -135,7 +135,7 @@ window.onload = function() {
         document.getElementById("featuredList").innerHTML = "";
         currentFeatured.forEach(x => {
             genreName(x, x.genre_ids[0]);
-            document.getElementById("featuredList").innerHTML += `<li>${movieCase(x.poster, x.name, x.year, x.genre_name)}</li>`;
+            document.getElementById("featuredList").innerHTML += `<li>${movieCase(x.id, x.poster, x.name, x.year, x.genre_name)}</li>`;
         });
         document.getElementById("less").setAttribute("class", "btn d-none");
         document.getElementById("more").setAttribute("class", "btn");
