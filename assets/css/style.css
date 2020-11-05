@@ -263,3 +263,17 @@ button.btnSubmit {
   line-height: 0.5rem;
   margin-left: 0.2rem;
 }
+
+.titleFooter {
+  border-bottom: solid 1px #797979;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.reviewMovie > div {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.13);
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.3rem;
+}
