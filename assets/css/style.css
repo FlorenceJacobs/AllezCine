@@ -16,14 +16,6 @@ a {
 }
 
 /*BODY*/
-h2 {
-  display: block;
-  color: #4f5354;
-  border-left: solid 5px #FE4240;
-  margin-left: 1rem;
-  padding-left: 1rem;
-}
-
 .btn {
   border-radius: 0px;
 }
@@ -111,6 +103,14 @@ input.form-control {
 }
 .carousel-caption h2 {
   color: white;
+}
+
+h2:not(.captionH2) {
+  display: block;
+  color: #4f5354;
+  border-left: solid 5px #FE4240;
+  margin-left: 1rem;
+  padding-left: 1rem;
 }
 
 #carouselExampleIndicators .active {
@@ -223,9 +223,16 @@ input.form-control {
 #more, #less {
   background-color: #FE4240;
   color: white;
+  border-radius: 0;
 }
 #more:hover, #less:hover {
   background-color: white;
   border: solid 2px #FE4240;
   color: #4f5354;
+}
+
+/*FOOTER*/
+footer {
+  background-color: black;
+  color: white;
 }
