@@ -132,6 +132,7 @@ window.onload = function() {
             queryFilm("popularity.desc", x, incFilms, currentFeatured, "featuredList");
             setTimeout(removeClickOnCards, 1000)
             setTimeout(addClickOnCards, 2000);
+            document.getElementById("less").setAttribute("class", "btn d-none");
         });
     })
 
@@ -156,7 +157,6 @@ window.onload = function() {
         setTimeout(removeClickOnCards, 1000)
         setTimeout(addClickOnCards, 2000);
     })
-
 
     //fenêtre des cookies
     if (localStorage.getItem("cookies") == null){
