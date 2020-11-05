@@ -51,12 +51,12 @@ window.onload = function() {
 
 
     let currentFeatured = [];
-    function featuredFilms(x, inc) {
+    function featuredFilms(x, inc, list) {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1${x == 0 ? "" : `&with_genres=${x}`}`).then(response => response.json()).then(data => {
             console.log(x, inc);
             for (let i = (inc * 6 + 1); i < (inc * 6 + 7); i++) {
                 if (data.results[i] != undefined) {
-                    currentFeatured.push({
+                    list.push({
                         "id" : data.results[i].id,
                         "poster" : data.results[i].poster_path,
                         "name" : data.results[i].title,
@@ -68,7 +68,7 @@ window.onload = function() {
                 }
             };
             
-            currentFeatured.forEach((element, i) => {
+            list.forEach((element, i) => {
                 if (i >= inc * 6) {
                     genreName(element, element.genre_ids[0]);
                     document.getElementById("featuredList").innerHTML += `<li>${movieCase(element.id, element.poster, element.name, element.year, element.genre_name)}</li>`;
@@ -103,9 +103,9 @@ window.onload = function() {
     let incFilms = 0;
     let currentGenre = 0;
 
-    featuredFilms(0, incFilms);
+    featuredFilms(0, incFilms, currentFeatured);
     incFilms++;
-    featuredFilms(0, incFilms);
+    featuredFilms(0, incFilms, currentFeatured);
     setTimeout(addClickOnCards, 2000);
 
 
@@ -115,16 +115,16 @@ window.onload = function() {
             currentFeatured = [];
             incFilms = 0;
             currentGenre = x;
-            featuredFilms(x, incFilms);
+            featuredFilms(x, incFilms, currentFeatured);
             incFilms++;
-            featuredFilms(x, incFilms);
+            featuredFilms(x, incFilms, currentFeatured);
             setTimeout(addClickOnCards, 2000);
         });
     })
 
     document.getElementById("more").addEventListener("click", () => {
         incFilms++;
-        featuredFilms(currentGenre, incFilms);
+        featuredFilms(currentGenre, incFilms, currentFeatured);
         document.getElementById("less").setAttribute("class", "btn");
         setTimeout(addClickOnCards, 2000);
     })
