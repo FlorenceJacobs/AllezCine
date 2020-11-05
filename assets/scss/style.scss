@@ -137,14 +137,17 @@ input.form-control {
 }
 
 /*MOVIE PLAYING CARD*/
-
-
+#moviesPlaying {
+  margin-top : 4rem;
+}
 
 #cardList {
   border: 1px solid rgb(211, 211, 211);
   border-radius: 5px;
-  width: fit-content;
+  padding-top : 1rem;
+  padding-bottom: 1rem;
   
+
   & .moviePlayingCard {
     // margin-left : .7rem;
   }
