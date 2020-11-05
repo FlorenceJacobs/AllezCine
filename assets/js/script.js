@@ -51,7 +51,7 @@ window.onload = function() {
 
 
     let currentFeatured = [];
-    function queryFilm(sort, genre, inc, list) {
+    function queryFilm(sort, genre, inc, list, idList) {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US&sort_by=${sort}&include_adult=false&include_video=false&page=1${genre == 0 ? "" : `&with_genres=${genre}`}`).then(response => response.json()).then(data => {
             for (let i = (inc * 6); i < (inc * 6 + 6); i++) {
                 if (data.results[i] != undefined) {
@@ -93,7 +93,7 @@ window.onload = function() {
         
         exampleCards.forEach(x => {
             genreName(x, x.genre_ids[0]);
-            document.getElementById("cardList").innerHTML += `<li>${movieCase(x.id, x.poster, x.name, x.year, x.genre_name)}</li>`;
+            document.getElementById(idList).innerHTML += `<li>${movieCase(x.id, x.poster, x.name, x.year, x.genre_name)}</li>`;
         });
 
     });
@@ -101,10 +101,13 @@ window.onload = function() {
     let featuresButtons = [0, 28, 35, 18, 99, 27, 10751, 80, 14]
     let incFilms = 0;
     let currentGenre = 0;
+    let currentShop = [];
 
-    queryFilm("popularity.desc", 0, incFilms, currentFeatured);
+    queryFilm("popularity.desc", 0, incFilms, currentFeatured, "cardList");
+    queryFilm("vote_count.desc", 0, incFilms, currentShop, "shopList");
     incFilms++;
-    queryFilm("popularity.desc", 0, incFilms, currentFeatured);
+    queryFilm("popularity.desc", 0, incFilms, currentFeatured, "cardList");
+    queryFilm("vote_count.desc", 0, incFilms, currentShop, "shopList");
     setTimeout(addClickOnCards, 2000);
 
 
@@ -114,16 +117,16 @@ window.onload = function() {
             currentFeatured = [];
             incFilms = 0;
             currentGenre = x;
-            queryFilm("popularity.desc", x, incFilms, currentFeatured);
+            queryFilm("popularity.desc", x, incFilms, currentFeatured, "cardList");
             incFilms++;
-            queryFilm("popularity.desc", x, incFilms, currentFeatured);
+            queryFilm("popularity.desc", x, incFilms, currentFeatured, "cardList");
             setTimeout(addClickOnCards, 2000);
         });
     })
 
     document.getElementById("more").addEventListener("click", () => {
         incFilms++;
-        queryFilm("popularity.desc", currentGenre, incFilms, currentFeatured);
+        queryFilm("popularity.desc", currentGenre, incFilms, currentFeatured, "cardList");
         document.getElementById("less").setAttribute("class", "btn");
         setTimeout(addClickOnCards, 2000);
     })
