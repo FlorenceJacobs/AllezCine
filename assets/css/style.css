@@ -17,7 +17,11 @@ a {
 
 /*BODY*/
 h2 {
+  display: block;
   color: #4f5354;
+  border-left: solid 5px #FE4240;
+  margin-left: 1rem;
+  padding-left: 1rem;
 }
 
 .btn {
@@ -132,7 +136,7 @@ input.form-control {
 
 /*MOVIE PLAYING CARD*/
 #moviesPlaying {
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 #cardList {
@@ -141,6 +145,7 @@ input.form-control {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
 /*SOCIAL NETWORK BUTTONS*/
 .socialButtons {
   z-index: 100;
@@ -202,6 +207,25 @@ input.form-control {
 }
 
 /*FEATURED MOVIES*/
+.btn_featuredMovie:hover {
+  background-color: #FE4240;
+  color: white;
+}
+.btn_featuredMovie:focus {
+  background-color: #FE4240;
+  color: white;
+}
+
 #featuredList div {
   margin-left: 0.3rem;
+}
+
+#more, #less {
+  background-color: #FE4240;
+  color: white;
+}
+#more:hover, #less:hover {
+  background-color: white;
+  border: solid 2px #FE4240;
+  color: #4f5354;
 }
