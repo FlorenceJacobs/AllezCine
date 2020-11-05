@@ -42,7 +42,6 @@ window.onload = function() {
         fetch(`https://api.themoviedb.org/3/movie/${x.id}/videos?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US`).then(response => response.json()).then(data => {
             data.results[0] == undefined ? film.youtube = undefined : film.youtube = data.results[0].id;
         });
-        console.log(film);
     }
 
     function addClickOnCards() {
@@ -158,6 +157,35 @@ window.onload = function() {
         setTimeout(addClickOnCards, 2000);
     })
 
-    
+
+    //fenêtre des cookies
+    if (localStorage.getItem("cookies") == null){
+        let cookies = document.createElement("DIV");
+        cookies.setAttribute("class", "cookies")
+        let p = document.createElement("P");
+        cookies.appendChild(p);
+        p.innerText = "This website needs cookies to keep track of your account settings and preferences and to perform at best. None of them will be sold nor used by other companies. You can access the data of your cookies at any time, and delete them at any time. Cookies aren't needed to visit the website.";
+        let q = document.createElement("P");
+        q.innerText = "Do you accept that we keep personal info about you in cookies ?";
+        cookies.appendChild(q);
+        let yes = document.createElement("BUTTON");
+        yes.setAttribute("value", "Yes");
+        cookies.appendChild(yes);
+        yes.addEventListener("click", () => {
+            localStorage.setItem("cookies", true);
+            cookies.setAttribute("class", "cookies d-none")
+        });
+        let no = document.createElement("BUTTON");
+        yes.setAttribute("value", "No");
+        cookies.appendChild(no);
+        no.addEventListener("click", () => {
+            localStorage.setItem("cookies", false);
+            cookies.setAttribute("class", "cookies d-none")
+        });
+        let worry = document.createElement("P");
+        worry.innerText = "(There actually aren't any cookies right now so don't worry)"
+        cookies.appendChild(worry);
+        document.body.appendChild(cookies);
+    }
 
 };
