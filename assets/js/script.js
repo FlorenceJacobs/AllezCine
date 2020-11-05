@@ -1,13 +1,13 @@
 window.onload = function() {
-
-    function movieCase(poster, name, year, genre) {
+    
+    function movieCase(id, poster, name, year, genre) {
         let film;
-        film = `<div class="card moviePlayingCard" style="width: 11rem" data-toggle="modal" data-target="#moviePLayingCard">`;
-        film += `<img class="card-img-top" src="https://image.tmdb.org/t/p/w500${poster}" alt="CardImageCap">` 
+        film = `<div class="card moviePlayingCard" id="${id}" style="width: 11rem" data-toggle="modal" data-target="#moviePLayingCard">`;
+        film += `<img class="card-img-top" src="https://image.tmdb.org/t/p/w500${poster}" alt="CardImageCap">`;
         film += `<h3 class="card-title h6">${name}</h3>`;
-        film += `<div class="d-flex justify-content-between"><p class="card-text m-0">${year}</p>`
-        film += `<p class="m-0">${genre}</p>`
-        film += `</div></div>`
+        film += `<div class="d-flex justify-content-between"><p class="card-text m-0">${year}</p>`;
+        film += `<p class="m-0">${genre}</p>`;
+        film += `</div></div>`;
         return film;
     }
 
@@ -28,6 +28,18 @@ window.onload = function() {
             }
         })
     }
+
+
+    function addClickOnCards() {
+        [...document.getElementsByClassName("moviePlayingCard")].forEach((x, i) => {
+            x.addEventListener("click", () => {
+                fetch(`https://api.themoviedb.org/3/movie/${x.id}?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US`).then(response => response.json()).then(data => {
+                    console.log(data);
+                });
+            });
+        })
+    }
+
 
     let currentFeatured = [];
     function featuredFilms(x, inc) {
@@ -50,7 +62,7 @@ window.onload = function() {
             currentFeatured.forEach((element, i) => {
                 if (i >= inc * 6) {
                     genreName(element, element.genre_ids[0]);
-                    document.getElementById("featuredList").innerHTML += `<li>${movieCase(element.poster, element.name, element.year, element.genre_name)}</li>`;
+                    document.getElementById("featuredList").innerHTML += `<li>${movieCase(element.id, element.poster, element.name, element.year, element.genre_name)}</li>`;
                 }
             });
         }); 
@@ -73,7 +85,7 @@ window.onload = function() {
         
         exampleCards.forEach(x => {
             genreName(x, x.genre_ids[0]);
-            document.getElementById("cardList").innerHTML += `<li>${movieCase(x.poster, x.name, x.year, x.genre_name)}</li>`;
+            document.getElementById("cardList").innerHTML += `<li>${movieCase(x.id, x.poster, x.name, x.year, x.genre_name)}</li>`;
         });
 
     });
@@ -85,6 +97,7 @@ window.onload = function() {
     featuredFilms(0, incFilms);
     incFilms++;
     featuredFilms(0, incFilms);
+    setTimeout(addClickOnCards, 1000);
 
     featuresButtons.forEach((x, i) => {
         document.getElementsByClassName("btn_featuredMovie")[i].addEventListener("click", () => {
