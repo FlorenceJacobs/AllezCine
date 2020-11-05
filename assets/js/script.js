@@ -51,12 +51,11 @@ window.onload = function() {
 
 
     let currentFeatured = [];
-    function featuredFilms(x, inc) {
-        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1${x == 0 ? "" : `&with_genres=${x}`}`).then(response => response.json()).then(data => {
-            console.log(x, inc);
-            for (let i = (inc * 6 + 1); i < (inc * 6 + 7); i++) {
+    function queryFilm(sort, genre, inc, list, idList) {
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US&sort_by=${sort}&include_adult=false&include_video=false&page=1${genre == 0 ? "" : `&with_genres=${genre}`}`).then(response => response.json()).then(data => {
+            for (let i = (inc * 6); i < (inc * 6 + 6); i++) {
                 if (data.results[i] != undefined) {
-                    currentFeatured.push({
+                    list.push({
                         "id" : data.results[i].id,
                         "poster" : data.results[i].poster_path,
                         "name" : data.results[i].title,
@@ -68,7 +67,7 @@ window.onload = function() {
                 }
             };
             
-            currentFeatured.forEach((element, i) => {
+            list.forEach((element, i) => {
                 if (i >= inc * 6) {
                     genreName(element, element.genre_ids[0]);
                     document.getElementById("featuredList").innerHTML += `<li>${movieCase(element.id, element.poster, element.name, element.year, element.genre_name)}</li>`;
@@ -94,7 +93,7 @@ window.onload = function() {
         
         exampleCards.forEach(x => {
             genreName(x, x.genre_ids[0]);
-            document.getElementById("cardList").innerHTML += `<li>${movieCase(x.id, x.poster, x.name, x.year, x.genre_name)}</li>`;
+            document.getElementById(idList).innerHTML += `<li>${movieCase(x.id, x.poster, x.name, x.year, x.genre_name)}</li>`;
         });
 
     });
@@ -102,10 +101,13 @@ window.onload = function() {
     let featuresButtons = [0, 28, 35, 18, 99, 27, 10751, 80, 14]
     let incFilms = 0;
     let currentGenre = 0;
+    let currentShop = [];
 
-    featuredFilms(0, incFilms);
+    queryFilm("popularity.desc", 0, incFilms, currentFeatured, "cardList");
+    queryFilm("vote_count.desc", 0, incFilms, currentShop, "shopList");
     incFilms++;
-    featuredFilms(0, incFilms);
+    queryFilm("popularity.desc", 0, incFilms, currentFeatured, "cardList");
+    queryFilm("vote_count.desc", 0, incFilms, currentShop, "shopList");
     setTimeout(addClickOnCards, 2000);
 
 
@@ -115,16 +117,16 @@ window.onload = function() {
             currentFeatured = [];
             incFilms = 0;
             currentGenre = x;
-            featuredFilms(x, incFilms);
+            queryFilm("popularity.desc", x, incFilms, currentFeatured, "cardList");
             incFilms++;
-            featuredFilms(x, incFilms);
+            queryFilm("popularity.desc", x, incFilms, currentFeatured, "cardList");
             setTimeout(addClickOnCards, 2000);
         });
     })
 
     document.getElementById("more").addEventListener("click", () => {
         incFilms++;
-        featuredFilms(currentGenre, incFilms);
+        queryFilm("popularity.desc", currentGenre, incFilms, currentFeatured, "cardList");
         document.getElementById("less").setAttribute("class", "btn");
         setTimeout(addClickOnCards, 2000);
     })
@@ -135,11 +137,13 @@ window.onload = function() {
         document.getElementById("featuredList").innerHTML = "";
         currentFeatured.forEach(x => {
             genreName(x, x.genre_ids[0]);
-            document.getElementById("featuredList").innerHTML += `<li>${movieCase(x.poster, x.name, x.year, x.genre_name)}</li>`;
+            document.getElementById("featuredList").innerHTML += `<li>${movieCase(x.id, x.poster, x.name, x.year, x.genre_name)}</li>`;
         });
         document.getElementById("less").setAttribute("class", "btn d-none");
         document.getElementById("more").setAttribute("class", "btn");
         setTimeout(addClickOnCards, 2000);
     })
+
+    
 
 };
