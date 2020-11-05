@@ -158,7 +158,6 @@ window.onload = function() {
         setTimeout(addClickOnCards, 2000);
     })
 
-
     //fenêtre des cookies
     if (localStorage.getItem("cookies") == null){
         let cookies = document.createElement("DIV");
