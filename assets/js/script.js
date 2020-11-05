@@ -51,10 +51,9 @@ window.onload = function() {
 
 
     let currentFeatured = [];
-    function featuredFilms(x, inc, list) {
-        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1${x == 0 ? "" : `&with_genres=${x}`}`).then(response => response.json()).then(data => {
-            console.log(x, inc);
-            for (let i = (inc * 6 + 1); i < (inc * 6 + 7); i++) {
+    function queryFilm(sort, genre, inc, list) {
+        fetch(`https://api.themoviedb.org/3/discover/movie?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US&sort_by=${sort}&include_adult=false&include_video=false&page=1${genre == 0 ? "" : `&with_genres=${genre}`}`).then(response => response.json()).then(data => {
+            for (let i = (inc * 6); i < (inc * 6 + 6); i++) {
                 if (data.results[i] != undefined) {
                     list.push({
                         "id" : data.results[i].id,
@@ -103,9 +102,9 @@ window.onload = function() {
     let incFilms = 0;
     let currentGenre = 0;
 
-    featuredFilms(0, incFilms, currentFeatured);
+    queryFilm("popularity.desc", 0, incFilms, currentFeatured);
     incFilms++;
-    featuredFilms(0, incFilms, currentFeatured);
+    queryFilm("popularity.desc", 0, incFilms, currentFeatured);
     setTimeout(addClickOnCards, 2000);
 
 
@@ -115,16 +114,16 @@ window.onload = function() {
             currentFeatured = [];
             incFilms = 0;
             currentGenre = x;
-            featuredFilms(x, incFilms, currentFeatured);
+            queryFilm("popularity.desc", x, incFilms, currentFeatured);
             incFilms++;
-            featuredFilms(x, incFilms, currentFeatured);
+            queryFilm("popularity.desc", x, incFilms, currentFeatured);
             setTimeout(addClickOnCards, 2000);
         });
     })
 
     document.getElementById("more").addEventListener("click", () => {
         incFilms++;
-        featuredFilms(currentGenre, incFilms, currentFeatured);
+        queryFilm("popularity.desc", currentGenre, incFilms, currentFeatured);
         document.getElementById("less").setAttribute("class", "btn");
         setTimeout(addClickOnCards, 2000);
     })
@@ -141,5 +140,7 @@ window.onload = function() {
         document.getElementById("more").setAttribute("class", "btn");
         setTimeout(addClickOnCards, 2000);
     })
+
+    
 
 };
