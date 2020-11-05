@@ -111,8 +111,6 @@ document.getElementById("more").addEventListener("click", () => {
     document.getElementById("less").setAttribute("class", "btn");
 })
 
-
-
 document.getElementById("less").addEventListener("click", () => {
     currentFeatured = currentFeatured.slice(0, 12);
     incFilms = 1;
