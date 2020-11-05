@@ -149,6 +149,7 @@ input.form-control {
 /*MOVIE PLAYING CARD*/
 
 .moviePlayingCard {
+  border: none;
   margin-bottom: 0.7rem;
   transition: all .2s ease-in-out;
   &:hover {
@@ -252,7 +253,6 @@ input.form-control {
     border: solid 2px $primaryColor;
     color: $titleColor;
   }
-
 }
 
 /*FOOTER*/
@@ -268,9 +268,9 @@ footer {
 
 button.btnSubmit {
   padding-top: 0rem;
-  padding-bottom : 0rem;
+  padding-bottom: 0rem;
   line-height: 0.5rem;
-  margin-left :0.1rem;
+  margin-left:0.2rem;
 
   
 }
