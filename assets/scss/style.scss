@@ -24,6 +24,8 @@ h2 {
   display: block;
   color : $titleColor;
   border-left : solid 5px $primaryColor;
+  margin-left : 1rem;
+  padding-left: 1rem;
 }
 
 .btn {
@@ -149,11 +151,8 @@ input.form-control {
   border-radius: 5px;
   padding-top : 1rem;
   padding-bottom: 1rem;
-  
+}
 
-//   & .moviePlayingCard {
-  
-// }
 
 /*SOCIAL NETWORK BUTTONS*/
 
@@ -214,6 +213,29 @@ input.form-control {
 }
 
 /*FEATURED MOVIES*/
+
+.btn_featuredMovie{
+  &:hover {
+    background-color: $primaryColor;
+    color: white;
+  }
+  &:focus {
+    background-color: $primaryColor;
+    color: white;
+  }
+}
+
 #featuredList div {
   margin-left : .3rem;
+}
+
+#more, #less {
+  background-color: $primaryColor;
+  color: white;
+  &:hover {
+    background-color: white;
+    border: solid 2px $primaryColor;
+    color: $titleColor;
+  }
+
 }
