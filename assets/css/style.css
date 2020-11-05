@@ -131,15 +131,11 @@ input.form-control {
 }
 
 /*MOVIE PLAYING CARD*/
-.moviePlayingCard {
-  margin-left: 0.7rem;
-}
-
 #cardList {
   border: 1px solid lightgray;
   border-radius: 5px;
+  width: fit-content;
 }
-
 /*SOCIAL NETWORK BUTTONS*/
 .socialButtons {
   z-index: 100;

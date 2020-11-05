@@ -138,13 +138,16 @@ input.form-control {
 
 /*MOVIE PLAYING CARD*/
 
-.moviePlayingCard {
-  margin-left : .7rem;
-}
+
 
 #cardList {
   border: 1px solid rgb(211, 211, 211);
   border-radius: 5px;
+  width: fit-content;
+  
+  & .moviePlayingCard {
+    // margin-left : .7rem;
+  }
 }
 
 /*SOCIAL NETWORK BUTTONS*/
