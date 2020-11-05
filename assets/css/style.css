@@ -18,6 +18,12 @@ a {
 /*BODY*/
 .btn {
   border-radius: 0px;
+  background-color: #FE4240;
+}
+.btn:hover {
+  background-color: white;
+  color: #4f5354;
+  border: solid 2px #FE4240;
 }
 
 .red {
@@ -26,6 +32,14 @@ a {
 
 .bold {
   font-weight: 600;
+}
+
+h2:not(.captionH2) {
+  display: block;
+  color: #4f5354;
+  border-left: solid 5px #FE4240;
+  margin-left: 1rem;
+  padding-left: 1rem;
 }
 
 /*NAVIGATION*/
@@ -105,14 +119,6 @@ input.form-control {
   color: white;
 }
 
-h2:not(.captionH2) {
-  display: block;
-  color: #4f5354;
-  border-left: solid 5px #FE4240;
-  margin-left: 1rem;
-  padding-left: 1rem;
-}
-
 #carouselExampleIndicators .active {
   background-color: #FE4240;
 }
@@ -135,6 +141,15 @@ h2:not(.captionH2) {
 }
 
 /*MOVIE PLAYING CARD*/
+.moviePlayingCard {
+  border: none;
+  margin-bottom: 0.7rem;
+  transition: all 0.2s ease-in-out;
+}
+.moviePlayingCard:hover {
+  transform: scale(1.1);
+}
+
 #moviesPlaying {
   margin-top: 1rem;
 }
@@ -235,4 +250,16 @@ h2:not(.captionH2) {
 footer {
   background-color: black;
   color: white;
+}
+
+.subscribeNL {
+  display: inline-block;
+  background-color: white;
+}
+
+button.btnSubmit {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  line-height: 0.5rem;
+  margin-left: 0.2rem;
 }
