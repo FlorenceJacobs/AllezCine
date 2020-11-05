@@ -44,16 +44,35 @@ nav.navbar {
 }
 
 nav.navbar h1 a{
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
-.nav-item .active {
-  background-color: $primaryColor;
+li.nav-item {
+  background-color: rgba(255, 255, 255, 0.116);
+  margin-right: 3px;
+  font-size: 0.9rem;
+  &.active {
+    background-color: $primaryColor;
+    color: white;
+  }
+  &:first-child {
+    background-color: rgba(255, 255, 255, 0)
+  }
+  &:last-child {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+input.form-control {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
 }
 
-.navbar-toggler{
-	background-color: #fff;
+.searchConcat {
+  display : inline-block;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.39);
+  color: rgb(161, 161, 161)
 }
 
 /*JUMBOTRON- CAROUSEL*/
@@ -74,6 +93,7 @@ nav.navbar h1 a{
   width: 100%;
   object-fit: cover;
   object-position: 50% 50%;
+  filter: brightness(0.65);
 }
 
 .carousel-inner {
@@ -83,12 +103,29 @@ nav.navbar h1 a{
 .carousel-caption {
   position: absolute;
   top: 40%;
+  & h2 {
+    color: white
+  }
+}
+
+#carouselExampleIndicators .active {
+  background-color: $primaryColor;
 }
 
 /*LOGIN NAVBAR*/
 
 .loginNavbar {
   background-color: $primaryColor;
+  font-size: 0.9rem;
+    & ul li .btn{
+      display: block;
+      background-color: black;
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+      &:hover {
+        color: white;
+      }
+    }
 }
 
 /*MOVIE PLAYING CARD*/
@@ -108,31 +145,57 @@ nav.navbar h1 a{
 .socialButtons {
   z-index : 100;
   position : fixed;
-  top : 80vh;
+  top : 40vh;
 
-    .sw_btn {
-      display : block;
-      width : 15rem;
-      cursor: pointer;
-      color: white;
-      font-size: 0.9rem;
-      line-height: 2rem;
-      margin-bottom: 2px;
-      border-radius : 5rem;
-    }
+  .sw_btn {
+    display : block;
+    width : 11rem;
+    cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+    line-height: 2.3rem;
+    margin-bottom: 2px;
+    border-radius : 5rem;
+    padding-left: 2rem;
+    position : absolute;
+    left: -8.8rem;
+    transition: all 0.4s ease-out;
+      &:hover {
+        left:-2rem;
+      }
+      a {
+        text-decoration : none;
+        color : white;
+      }
+  }
+}
 
-    .facebook {
-      background-color: #3c5f95;
-    }
-    .instagram {
-      background-color: #f34a8d;
-    }
-    .twitter {
-      background-color: #1ca2f7;
-    }
-    .google {
-      background-color: #d14b3f;
-    }
+.facebook {
+  background-color: #3c5f95;
+  top : 2.5rem;
+}
+.instagram {
+  background-color: #f34a8d;
+  top : 5rem;
+}
+.twitter {
+  background-color: #1ca2f7;
+  top : 0rem;
+}
+.google {
+  background-color: #d14b3f;
+  top : 7.5rem;
+}
+.whiteRound {
+  display: block;
+  background-color: white;
+  border-radius: 20px;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 0.3rem;
+  .fab {
+    font-size: 1.3rem;
+  }
 }
 
 /*FEATURED MOVIES*/

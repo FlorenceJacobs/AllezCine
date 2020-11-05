@@ -39,16 +39,36 @@ nav.navbar {
 }
 
 nav.navbar h1 a {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
-.nav-item .active {
+li.nav-item {
+  background-color: rgba(255, 255, 255, 0.116);
+  margin-right: 3px;
+  font-size: 0.9rem;
+}
+li.nav-item.active {
   background-color: #FE4240;
+  color: white;
+}
+li.nav-item:first-child {
+  background-color: rgba(255, 255, 255, 0);
+}
+li.nav-item:last-child {
+  background-color: rgba(255, 255, 255, 0);
 }
 
-.navbar-toggler {
-  background-color: #fff;
+input.form-control {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+.searchConcat {
+  display: inline-block;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.39);
+  color: #a1a1a1;
 }
 
 /*JUMBOTRON- CAROUSEL*/
@@ -68,6 +88,7 @@ nav.navbar h1 a {
   width: 100%;
   object-fit: cover;
   object-position: 50% 50%;
+  filter: brightness(0.65);
 }
 
 .carousel-inner {
@@ -78,10 +99,27 @@ nav.navbar h1 a {
   position: absolute;
   top: 40%;
 }
+.carousel-caption h2 {
+  color: white;
+}
+
+#carouselExampleIndicators .active {
+  background-color: #FE4240;
+}
 
 /*LOGIN NAVBAR*/
 .loginNavbar {
   background-color: #FE4240;
+  font-size: 0.9rem;
+}
+.loginNavbar ul li .btn {
+  display: block;
+  background-color: black;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+.loginNavbar ul li .btn:hover {
+  color: white;
 }
 
 /*MOVIE PLAYING CARD*/
@@ -99,29 +137,60 @@ nav.navbar h1 a {
 .socialButtons {
   z-index: 100;
   position: fixed;
-  top: 80vh;
+  top: 40vh;
 }
 .socialButtons .sw_btn {
   display: block;
-  width: 15rem;
+  width: 11rem;
   cursor: pointer;
   color: white;
   font-size: 0.9rem;
-  line-height: 2rem;
+  line-height: 2.3rem;
   margin-bottom: 2px;
   border-radius: 5rem;
+  padding-left: 2rem;
+  position: absolute;
+  left: -8.8rem;
+  transition: all 0.4s ease-out;
 }
-.socialButtons .facebook {
+.socialButtons .sw_btn:hover {
+  left: -2rem;
+}
+.socialButtons .sw_btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.facebook {
   background-color: #3c5f95;
+  top: 2.5rem;
 }
-.socialButtons .instagram {
+
+.instagram {
   background-color: #f34a8d;
+  top: 5rem;
 }
-.socialButtons .twitter {
+
+.twitter {
   background-color: #1ca2f7;
+  top: 0rem;
 }
-.socialButtons .google {
+
+.google {
   background-color: #d14b3f;
+  top: 7.5rem;
+}
+
+.whiteRound {
+  display: block;
+  background-color: white;
+  border-radius: 20px;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 0.3rem;
+}
+.whiteRound .fab {
+  font-size: 1.3rem;
 }
 
 /*FEATURED MOVIES*/
