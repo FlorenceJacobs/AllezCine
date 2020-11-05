@@ -125,7 +125,7 @@
                     </div>
                     <!--End Jumbotron-->
                     <!--Intersection Login-Navbar-->
-                    <nav class="col navbar loginNavbar">
+                    <div class="col navbar loginNavbar">
                         <ul class="nav text-white">
                             <li class="nav-item d-flex align-items-center">
                                 <i class="fa fa-phone nav-link" aria-hidden="true"></i><span></span>(+000)009 455 4085</span>
@@ -137,7 +137,7 @@
                                 <a class="btn rounded-0 nav-link" href="#" role="button">REGISTER</a>
                             </li>
                         </ul>
-                    </nav>
+                    </div>
                     <!--End Intersection Login-Navbar-->
                 </div>
             </div>
@@ -167,7 +167,7 @@
             <div class="container">
                 <div class="row mx-0 my-0">
                     <!--Movie Playing Card-->
-                    <article class="col-12">
+                    <article class="col-12 p-0">
                         <ul id="cardList" class="d-flex flex-wrap justify-content-around">
                         <!-- <div class="card" style="width: 11rem" data-toggle="modal" data-target="#moviePLayingCard">
                             <img class="card-img-top" src="assets/images/download.jpeg" alt="CardImageCap">
@@ -230,12 +230,10 @@
         <!--End Modal Movies Playing-->
         <!--Featured Movies-->
         <section>
+            <h2>FEATURED MOVIES</h2>
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        <h2>FEATURED MOVIES</h2>
-                    </div>
-                    <div>
+                    <div class="col">
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <button value="1" type="button" class="btn btn_featuredMovie">All</button>
                             <button value="2" type="button" class="btn btn_featuredMovie">Action</button>
@@ -248,46 +246,24 @@
                             <button value="8" type="button" class="btn btn_featuredMovie">Fantasy</button>
                         </div>
                         <div>
-                            <ul id="featuredList" class="d-flex flex-wrap">
+                            <ul id="featuredList" class="d-flex flex-wrap justify-content-between p-0">
                                 LIST de CARDS EN SCRIPT ID = featuredList
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-12 p-0">
-                        <button id="more" type="button" class="btn">MORE FILMS</button>
-                        <button id="less" type="button" class="btn d-none">LESS FILMS</button>
+                        <div class="col-12 p-0">
+                            <button id="more" type="button" class="btn">MORE FILMS</button>
+                            <button id="less" type="button" class="btn d-none">LESS FILMS</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <!--End Featured Movie-->
-        <!--Brand New-->
-        <section id="brandNew">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2>BRAND NEW</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--End Brand New-->
-        <!--Best Ever-->
-        <section id="bestEver">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2>BEST EVER</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--End Best Ever-->
         <!--Shop-->
         <section id="shop">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-10 offset-md-1">
                         <h2>SHOP MOVIES</h2>
                     </div>
                 </div>
@@ -298,7 +274,7 @@
         <section id="contactUs">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-10 offset-md-1">
                         <h2>CONTACT US</h2>
                     </div>
                 </div>

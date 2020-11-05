@@ -17,7 +17,10 @@ a {
 
 /*BODY*/
 h2 {
+  display: block;
   color: #4f5354;
+  border-left: solid 5px #FE4240;
+  padding-left: 1rem;
 }
 
 .btn {
@@ -132,7 +135,7 @@ input.form-control {
 
 /*MOVIE PLAYING CARD*/
 #moviesPlaying {
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 #cardList {

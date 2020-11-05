@@ -21,7 +21,9 @@ a {
 /*BODY*/
 
 h2 {
-  color : $titleColor
+  display: block;
+  color : $titleColor;
+  border-left : solid 5px $primaryColor;
 }
 
 .btn {
@@ -137,8 +139,9 @@ input.form-control {
 }
 
 /*MOVIE PLAYING CARD*/
+
 #moviesPlaying {
-  margin-top : 4rem;
+  margin-top : 1rem;
 }
 
 #cardList {
@@ -148,10 +151,9 @@ input.form-control {
   padding-bottom: 1rem;
   
 
-  & .moviePlayingCard {
-    // margin-left : .7rem;
-  }
-}
+//   & .moviePlayingCard {
+  
+// }
 
 /*SOCIAL NETWORK BUTTONS*/
 
