@@ -30,22 +30,30 @@ window.onload = function() {
     }
 
 
+    function clickCallback(x) {
+        let film = {};
+        fetch(`https://api.themoviedb.org/3/movie/${x.id}?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US`).then(response => response.json()).then(data => {
+            film.overview = data.overview;
+            film.release_date = data.release_date;
+            film.genres = [];
+            data.genres.forEach(x => film.genres.push(x.id));
+            film.price = "Free";
+        });
+        fetch(`https://api.themoviedb.org/3/movie/${x.id}/videos?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US`).then(response => response.json()).then(data => {
+            data.results[0] == undefined ? film.youtube = undefined : film.youtube = data.results[0].id;
+        });
+        console.log(film);
+    }
+
     function addClickOnCards() {
-        [...document.getElementsByClassName("moviePlayingCard")].forEach((x, i) => {
-            x.addEventListener("click", () => {
-                let film = {};
-                fetch(`https://api.themoviedb.org/3/movie/${x.id}?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US`).then(response => response.json()).then(data => {
-                    film.overview = data.overview;
-                    film.release_date = data.release_date;
-                    film.genres = [];
-                    data.genres.forEach(x => film.genres.push(x.id));
-                    film.price = "Free";
-                });
-                fetch(`https://api.themoviedb.org/3/movie/${x.id}/videos?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US`).then(response => response.json()).then(data => {
-                    film.youtube = data.results[0].id;
-                });
-                console.log(film);
-            });
+        [...document.getElementsByClassName("moviePlayingCard")].forEach(x => {
+            x.addEventListener("click", () => clickCallback(x));
+        })
+    }
+
+    function removeClickOnCards() {
+        [...document.getElementsByClassName("moviePlayingCard")].forEach(x => {
+            x.removeEventListener("click", () => clickCallback(x));
         })
     }
 
@@ -110,6 +118,7 @@ window.onload = function() {
     incFilms++;
     queryFilm("popularity.desc", 0, incFilms, currentFeatured, "featuredList");
     queryFilm("vote_count.desc", 0, incFilms, currentShop, "shopList");
+    setTimeout(removeClickOnCards, 1000)
     setTimeout(addClickOnCards, 2000);
 
 
@@ -122,6 +131,7 @@ window.onload = function() {
             queryFilm("popularity.desc", x, incFilms, currentFeatured, "featuredList");
             incFilms++;
             queryFilm("popularity.desc", x, incFilms, currentFeatured, "featuredList");
+            setTimeout(removeClickOnCards, 1000)
             setTimeout(addClickOnCards, 2000);
         });
     })
@@ -130,6 +140,7 @@ window.onload = function() {
         incFilms++;
         queryFilm("popularity.desc", currentGenre, incFilms, currentFeatured, "featuredList");
         document.getElementById("less").setAttribute("class", "btn");
+        setTimeout(removeClickOnCards, 1000)
         setTimeout(addClickOnCards, 2000);
     })
 
@@ -143,6 +154,7 @@ window.onload = function() {
         });
         document.getElementById("less").setAttribute("class", "btn d-none");
         document.getElementById("more").setAttribute("class", "btn");
+        setTimeout(removeClickOnCards, 1000)
         setTimeout(addClickOnCards, 2000);
     })
 
