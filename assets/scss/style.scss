@@ -20,14 +20,6 @@ a {
 
 /*BODY*/
 
-h2 {
-  display: block;
-  color : $titleColor;
-  border-left : solid 5px $primaryColor;
-  margin-left : 1rem;
-  padding-left: 1rem;
-}
-
 .btn {
   border-radius: 0px;
 }
@@ -117,6 +109,14 @@ input.form-control {
   & h2 {
     color: white
   }
+}
+
+h2:not(.captionH2) {
+  display: block;
+  color : $titleColor;
+  border-left : solid 5px $primaryColor;
+  margin-left : 1rem;
+  padding-left: 1rem;
 }
 
 #carouselExampleIndicators .active {
@@ -232,10 +232,17 @@ input.form-control {
 #more, #less {
   background-color: $primaryColor;
   color: white;
+  border-radius: 0;
   &:hover {
     background-color: white;
     border: solid 2px $primaryColor;
     color: $titleColor;
   }
 
+}
+
+/*FOOTER*/
+footer {
+  background-color: black;
+  color: white;
 }
