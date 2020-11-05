@@ -49,6 +49,8 @@ window.onload = function() {
         })
     }
 
+    
+
 
     let currentFeatured = [];
     function queryFilm(sort, genre, inc, list, idList) {
@@ -70,7 +72,7 @@ window.onload = function() {
             list.forEach((element, i) => {
                 if (i >= inc * 6) {
                     genreName(element, element.genre_ids[0]);
-                    document.getElementById("featuredList").innerHTML += `<li>${movieCase(element.id, element.poster, element.name, element.year, element.genre_name)}</li>`;
+                    document.getElementById(idList).innerHTML += `<li>${movieCase(element.id, element.poster, element.name, element.year, element.genre_name)}</li>`;
                 }
             });
         }); 
@@ -93,7 +95,7 @@ window.onload = function() {
         
         exampleCards.forEach(x => {
             genreName(x, x.genre_ids[0]);
-            document.getElementById(idList).innerHTML += `<li>${movieCase(x.id, x.poster, x.name, x.year, x.genre_name)}</li>`;
+            document.getElementById("cardList").innerHTML += `<li>${movieCase(x.id, x.poster, x.name, x.year, x.genre_name)}</li>`;
         });
 
     });
@@ -103,10 +105,10 @@ window.onload = function() {
     let currentGenre = 0;
     let currentShop = [];
 
-    queryFilm("popularity.desc", 0, incFilms, currentFeatured, "cardList");
+    queryFilm("popularity.desc", 0, incFilms, currentFeatured, "featuredList");
     queryFilm("vote_count.desc", 0, incFilms, currentShop, "shopList");
     incFilms++;
-    queryFilm("popularity.desc", 0, incFilms, currentFeatured, "cardList");
+    queryFilm("popularity.desc", 0, incFilms, currentFeatured, "featuredList");
     queryFilm("vote_count.desc", 0, incFilms, currentShop, "shopList");
     setTimeout(addClickOnCards, 2000);
 
@@ -117,16 +119,16 @@ window.onload = function() {
             currentFeatured = [];
             incFilms = 0;
             currentGenre = x;
-            queryFilm("popularity.desc", x, incFilms, currentFeatured, "cardList");
+            queryFilm("popularity.desc", x, incFilms, currentFeatured, "featuredList");
             incFilms++;
-            queryFilm("popularity.desc", x, incFilms, currentFeatured, "cardList");
+            queryFilm("popularity.desc", x, incFilms, currentFeatured, "featuredList");
             setTimeout(addClickOnCards, 2000);
         });
     })
 
     document.getElementById("more").addEventListener("click", () => {
         incFilms++;
-        queryFilm("popularity.desc", currentGenre, incFilms, currentFeatured, "cardList");
+        queryFilm("popularity.desc", currentGenre, incFilms, currentFeatured, "featuredList");
         document.getElementById("less").setAttribute("class", "btn");
         setTimeout(addClickOnCards, 2000);
     })
