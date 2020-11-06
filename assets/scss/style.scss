@@ -74,11 +74,6 @@ li.nav-item {
   }
 }
 
-.firstNavbar .loginNavbar li.nav-item > a:hover {
-  background-color: rgb(255, 255, 255);
-  color: #4f5354;
-}
-
 /*INPUT SEARCH*/
 input.form-control {
   background-color: rgba(255, 255, 255, 0);
@@ -167,7 +162,6 @@ input.form-control {
   padding-top : 1rem;
   padding-bottom: 1rem;
 }
-
 
 /*SOCIAL NETWORK BUTTONS*/
 
@@ -278,10 +272,18 @@ button.btnSubmit {
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
 .reviewMovie>div{
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.13);
   padding-right: 0.5rem;
   padding-left: 00.5rem;
   margin-bottom: 0.3rem;
+}
+
+.ftIntersection {
+  display:block;
+  height : 2rem;
+  border-top: solid 1px rgb(121, 121, 121);
+  border-bottom: solid 1px rgb(121, 121, 121);
 }
