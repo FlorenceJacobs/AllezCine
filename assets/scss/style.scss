@@ -59,7 +59,7 @@ nav.navbar h1 a{
 }
 
 li.nav-item {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.253);
   margin-right: 3px;
   font-size: 0.9rem;
   &.active {
@@ -116,7 +116,11 @@ input.form-control {
   position: absolute;
   top: 40%;
   & h2 {
-    color: white
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    & .red {
+      font-size: 3.5rem;
+    }
   }
 }
 

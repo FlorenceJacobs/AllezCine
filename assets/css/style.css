@@ -54,7 +54,7 @@ nav.navbar h1 a {
 }
 
 li.nav-item {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.253);
   margin-right: 3px;
   font-size: 0.9rem;
 }
@@ -112,6 +112,10 @@ input.form-control {
 }
 .carousel-caption h2 {
   color: white;
+  font-size: 3rem;
+}
+.carousel-caption h2 .red {
+  font-size: 3.5rem;
 }
 
 #carouselExampleIndicators .active {
