@@ -54,7 +54,7 @@ nav.navbar h1 a {
 }
 
 li.nav-item {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.253);
   margin-right: 3px;
   font-size: 0.9rem;
 }
@@ -67,11 +67,6 @@ li.nav-item:first-child {
 }
 li.nav-item:last-child {
   background-color: rgba(255, 255, 255, 0);
-}
-
-.firstNavbar .loginNavbar li.nav-item > a:hover {
-  background-color: white;
-  color: #4f5354;
 }
 
 /*INPUT SEARCH*/
@@ -117,6 +112,10 @@ input.form-control {
 }
 .carousel-caption h2 {
   color: white;
+  font-size: 3rem;
+}
+.carousel-caption h2 .red {
+  font-size: 3.5rem;
 }
 
 #carouselExampleIndicators .active {
@@ -276,4 +275,11 @@ button.btnSubmit {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   margin-bottom: 0.3rem;
+}
+
+.ftIntersection {
+  display: block;
+  height: 2rem;
+  border-top: solid 1px #797979;
+  border-bottom: solid 1px #797979;
 }
