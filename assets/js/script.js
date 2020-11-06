@@ -158,6 +158,13 @@ window.onload = function() {
         setTimeout(addClickOnCards, 2000);
     })
 
+    //footer
+    setTimeout(() => {(currentFeatured.slice(0,6)).forEach(x => {
+        genreName(x, x.genre_ids[0]);
+            document.getElementById("footerTable").innerHTML += `<img src="https://image.tmdb.org/t/p/w500${x.poster}" alt="No picture available :("></img>`
+        });
+    }, 1000)
+
     //fenêtre des cookies
     if (localStorage.getItem("cookies") == null){
         let cookies = document.createElement("DIV");
