@@ -67,6 +67,7 @@ window.onload = function() {
                     list.push({
                         "id" : data.results[i].id,
                         "poster" : data.results[i].poster_path,
+                        "img" : data.results[i].backdrop_path,
                         "name" : data.results[i].title,
                         "year" : data.results[i].release_date.substring(0, 4),
                         "genre_ids" : data.results[i].genre_ids
@@ -159,11 +160,16 @@ window.onload = function() {
     })
 
     //footer
-    setTimeout(() => {(currentFeatured.slice(0,6)).forEach(x => {
-        genreName(x, x.genre_ids[0]);
-            document.getElementById("footerTable").innerHTML += `<img src="https://image.tmdb.org/t/p/w500${x.poster}" alt="No picture available :("></img>`
+    setTimeout(() => {(currentShop.slice(0,4)).forEach(x => {
+            document.getElementById("footerList").innerHTML += `<li class="d-flex align-items-center justify-content-around"><img src="https://image.tmdb.org/t/p/w500${x.img}" alt="No picture available :("><p>${x.name}</p></li>`
         });
     }, 1000)
+
+    setTimeout(() => {(currentFeatured.slice(0,6)).forEach(x => {
+            document.getElementById("footerTable").innerHTML += `<img src="https://image.tmdb.org/t/p/w500${x.poster}" alt="No picture available :(">`
+        });
+    }, 1000);
+    
 
     //fenêtre des cookies
     if (localStorage.getItem("cookies") == null){
