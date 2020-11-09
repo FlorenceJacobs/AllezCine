@@ -156,13 +156,16 @@ input.form-control {
   }
 }
 
+.card-img-top {
+  border-radius: 0px;
+}
+
 #moviesPlaying {
   margin-top : 1rem;
 }
 
 #cardList {
   border: 1px solid rgb(211, 211, 211);
-  border-radius: 5px;
   padding-top : 1rem;
   padding-bottom: 1rem;
 }

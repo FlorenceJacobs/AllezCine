@@ -149,13 +149,16 @@ input.form-control {
   transform: scale(1.1);
 }
 
+.card-img-top {
+  border-radius: 0px;
+}
+
 #moviesPlaying {
   margin-top: 1rem;
 }
 
 #cardList {
   border: 1px solid lightgray;
-  border-radius: 5px;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -291,5 +294,3 @@ button.btnSubmit {
 #footerList img {
   width: 50%;
 }
-
-/*# sourceMappingURL=style.css.map */
