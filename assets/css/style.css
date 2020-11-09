@@ -335,7 +335,7 @@ button.btnSubmit {
   margin-right: 0.5rem;
 }
 
-/*Arrox Up*/
+/*Arrow Up*/
 canvas {
   width: 5rem;
   border-style: solid;
@@ -343,4 +343,6 @@ canvas {
   border-color: #FE4240;
   border-width: 3px;
   position: absolute;
+  right: 30px;
+  bottom: 50px;
 }
