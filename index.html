@@ -145,7 +145,7 @@
                                             <div class="modal-body mx-3">
                                                 <div class="md-form mb-3 d-flex align-items-center">
                                                 <i class="fas fa-user prefix"></i>
-                                                <input type="text" class="form-control ml-1 border" id="loginName" placeholder="User name">
+                                                <input type="text" class="form-control ml-1" id="loginName" placeholder="User name">
                                                 </div>
                                                 <div class="md-form mb-3 d-flex align-items-center">
                                                 <i class="fas fa-envelope prefix"></i>
@@ -389,7 +389,7 @@
                     <div>2019</div>
                     <div>2018</div>
                     <div>2017</div>
-                    <a id="testCookies">2016</a>
+                    <a data-toggle="modal" data-target="#modalCookies">2016</a>
                     <div>2015</div>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 d-fex flex-column">
@@ -430,7 +430,24 @@
                 </div>
             </div>
         </div>
-        <!--bouton Modal Test-->
+        <!--Modal Generique-->
+        <div class="modal fade" id="testexampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalCards">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <!--Modal Cookies-->
         <div class="modal fade" id="modalCookies" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -454,11 +471,11 @@
                 <p>(There actually aren't any cookies right now so don't worry)</p>
             </div>
             </div>
-            <!--End Modal Cookies-->
         </div>
         </div>
     </footer>
     
+
 
     <script type="text/javascript" src="assets/js/script.js"></script>
     <!-- Optional JavaScript -->

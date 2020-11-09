@@ -172,6 +172,10 @@ input.form-control {
   padding-bottom: 1rem;
 }
 
+.youtube {
+  width: 100%;
+}
+
 /*SOCIAL NETWORK BUTTONS*/
 .socialButtons {
   z-index: 100;
