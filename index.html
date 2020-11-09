@@ -124,21 +124,58 @@
                         <!--End Carousel-->
                     </div>
                     <!--End Jumbotron-->
-                    <!--Intersection Login-Navbar-->
+                    <!--Login-Navbar-->
                     <div class="col navbar loginNavbar">
                         <ul class="nav text-white">
                             <li class="nav-item d-flex align-items-center mr-3">
                                 <i class="fa fa-phone nav-link" aria-hidden="true"></i><span></span>(+000)009 455 4085</span>
                             </li>
                             <li class="nav-item">
-                                <a class="btn rounded-0 nav-link m-0" href="#" role="button">LOGIN</a>
+                                <a class="btn rounded-0 nav-link m-0" href="#" role="button" data-toggle="modal" data-target="#modalLogin">LOGIN</a>
+                                <!--Modal Login-->
+                                <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header text-center">
+                                                <h4 class="modal-title w-100 font-weight-bold">Login</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body mx-3">
+                                                <div class="md-form mb-5">
+                                                <i class="fas fa-user prefix"></i>
+                                                <input type="text" id="loginName" class="form-control validate">
+                                                <label data-error="wrong" data-success="right" for="loginName">Your name</label>
+                                                </div>
+                                                <div class="md-form mb-5">
+                                                <i class="fas fa-envelope prefix"></i>
+                                                <input type="email" id="loginEmail" class="form-control validate">
+                                                <label data-error="wrong" data-success="right" for="loginEmail">Your email</label>
+                                                </div>
+                                                <div class="md-form mb-4">
+                                                <i class="fas fa-lock prefix"></i>
+                                                <input type="password" id="loginPassword" class="form-control validate">
+                                                <label data-error="wrong" data-success="right" for="loginPassword">Your password</label>
+                                                </div>
+                                                <div class="md-form mb-4">
+                                                <input type="password" id="confirmLoginPassword" class="form-control validate">
+                                                <label data-error="wrong" data-success="right" for="confirmLoginPassword">Confirm your password</label>
+                                                </div>
+                                            </div>
+                                        <div class="modal-footer d-flex justify-content-center">
+                                            <button class="btn btn-deep-orange">Sign up</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="btn rounded-0 nav-link" href="#" role="button">REGISTER</a>
                             </li>
                         </ul>
                     </div>
-                    <!--End Intersection Login-Navbar-->
+                    <!--End Login-Navbar-->
                 </div>
             </div>
         </div>
@@ -170,60 +207,9 @@
                     <!--Movie Playing Card-->
                     <article class="col-12 p-0">
                         <ul id="cardList" class="d-flex flex-wrap justify-content-around">
-                        <!-- <div class="card" style="width: 11rem" data-toggle="modal" data-target="#moviePLayingCard">
-                            <img class="card-img-top" src="assets/images/download.jpeg" alt="CardImageCap">
-                            <div class="card-body">
-                                <h3 class="card-title">Card title</h3>
-                                <div class="d-flex justify-content-between">
-                                    <p class="card-text m-0">Year</p>
-                                    <p class="m-0">Genre</p>
-                                </div>
-                            </div>
-                        </div> -->
+                        <!--Featured Film See script.js-->
                         </ul>
-                        <!-- Movie Playing Modal-->
-                        <div class="modal fade" id="#moviePLayingCard" tabindex="-1" role="dialog" aria-labelledby="moviePLayingCardLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-12">Trailer - Lien video - JS</div>
-                                                <div class="col-12 modal-title">Titre</div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-3">Story line</div>
-                                                <div class="col-1">:</div>
-                                                <div class="col-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem corrupti ipsa quaerat saepe ea, id molestiae eum? Repellendus, quod accusantium.</div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-3">Release On</div>
-                                                <div class="col-1">:</div>
-                                                <div class="col-8">date, year.</div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-3">Genres</div>
-                                                <div class="col-1">:</div>
-                                                <div class="col-8">drame, kids, etc.</div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-3">Price</div>
-                                                <div class="col-1">:</div>
-                                                <div class="col-8">18 euros</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Movie Playing Modal-- See Script.js-->
                     </article>
                 </div>
             </div>
@@ -275,8 +261,54 @@
             <h2 class="ml-md-5 mt-5">CONTACT US</h2>
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col d-flex flex-column align-items-center">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.922389134048!2d4.437716815729746!3d50.40528397946906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c226750391b893%3A0x38f706c7ffab5a0c!2sBeCode%20Charleroi!5e0!3m2!1sfr!2sbe!4v1604913936961!5m2!1sfr!2sbe" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <!--Button Contact US-->
+                        <div><button id="boutonContact" type="button" class="boutonContact mt-4" data-toggle="modal" data-target="#modalContact">SEND US A MESSAGE</button></div>
                     </div>
+                    <!--Modal Contact US-->
+                    <div class="modal fade" id="modalContact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header text-center">
+                                <h4 class="modal-title w-100 font-weight-bold">Send us a message</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body mx-3">
+                                <div class="md-form mb-5">
+                                <i class="fas fa-user prefix grey-text"></i>
+                                <input type="text" id="form34" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="form34">Your name</label>
+                                </div>
+
+                                <div class="md-form mb-5">
+                                <i class="fas fa-envelope prefix grey-text"></i>
+                                <input type="email" id="form29" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="form29">Your email</label>
+                                </div>
+
+                                <div class="md-form mb-5">
+                                <i class="fas fa-tag prefix grey-text"></i>
+                                <input type="text" id="form32" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="form32">Subject</label>
+                                </div>
+
+                                <div class="md-form">
+                                <i class="fas fa-pencil prefix grey-text"></i>
+                                <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                                <label data-error="wrong" data-success="right" for="form8">Your message</label>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <button class="btn btn-unique">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Modal Contact US-->
                 </div>
             </div>
         </section>
