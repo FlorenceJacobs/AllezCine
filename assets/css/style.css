@@ -150,7 +150,7 @@ input.form-control {
   transition: all 0.2s ease-in-out;
 }
 .moviePlayingCard:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .card-img-top {
