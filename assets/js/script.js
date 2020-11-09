@@ -59,7 +59,7 @@ window.onload = function() {
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Release On :</h5><p>${film.month} ${film.day}, ${film.year}</p>`;
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Genres :</h5><p>${film.genreNames.join(" | ")}</p>`;
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Price :</h5><p>${film.price}</p>`;
-        }, 700)
+        }, 1000)
     }
 
     function addClickOnCards() {
@@ -136,8 +136,8 @@ window.onload = function() {
     incFilms++;
     queryFilm("popularity.desc", 0, incFilms, currentFeatured, "featuredList");
     queryFilm("vote_count.desc", 0, incFilms, currentShop, "shopList");
-    setTimeout(removeClickOnCards, 500)
-    setTimeout(addClickOnCards, 1000);
+    setTimeout(removeClickOnCards, 1000)
+    setTimeout(addClickOnCards, 1100);
 
 
     featuresButtons.forEach((x, i) => {
@@ -149,8 +149,8 @@ window.onload = function() {
             queryFilm("popularity.desc", x, incFilms, currentFeatured, "featuredList");
             incFilms++;
             queryFilm("popularity.desc", x, incFilms, currentFeatured, "featuredList");
-            setTimeout(removeClickOnCards, 500)
-            setTimeout(addClickOnCards, 1000);
+            setTimeout(removeClickOnCards, 1000)
+            setTimeout(addClickOnCards, 1100);
             document.getElementById("less").setAttribute("class", "btn d-none");
         });
     })
@@ -159,8 +159,8 @@ window.onload = function() {
         incFilms++;
         queryFilm("popularity.desc", currentGenre, incFilms, currentFeatured, "featuredList");
         document.getElementById("less").setAttribute("class", "btn");
-        setTimeout(removeClickOnCards, 500)
-        setTimeout(addClickOnCards, 1000);
+        setTimeout(removeClickOnCards, 1000)
+        setTimeout(addClickOnCards, 1100);
     })
 
     document.getElementById("less").addEventListener("click", () => {
@@ -173,44 +173,28 @@ window.onload = function() {
         });
         document.getElementById("less").setAttribute("class", "btn d-none");
         document.getElementById("more").setAttribute("class", "btn");
-        setTimeout(removeClickOnCards, 500)
-        setTimeout(addClickOnCards, 1000);
+        setTimeout(removeClickOnCards, 1000)
+        setTimeout(addClickOnCards, 1100);
     })
 
     //footer
     setTimeout(() => {(currentShop.slice(0,4)).forEach(x => {
-            document.getElementById("footerList").innerHTML += `<li class="d-flex align-items-center justify-content-around"><img src="https://image.tmdb.org/t/p/w500${x.img}" alt="No picture available :("><p>${x.name}</p></li>`
+            document.getElementById("footerList").innerHTML += `<li class="d-flex align-items-center justify-content-around"><img src="https://image.tmdb.org/t/p/w500${x.img}" class="col-6" alt="No picture available :("><p class="col-6">${x.name}</p></li>`
         });
-    }, 500)
+    }, 1000)
 
     setTimeout(() => {(currentFeatured.slice(0,6)).forEach(x => {
             document.getElementById("footerTable").innerHTML += `<img src="https://image.tmdb.org/t/p/w500${x.poster}" alt="No picture available :(">`
         });
-    }, 500);
+    }, 1000);
 
 
     //fenêtre des cookies
-    function addCookiesWindow() {
-        if (localStorage.getItem("cookies") == null){
 
-            document.getElementById("yes").addEventListener("click", () => {
-                localStorage.setItem("cookies", true);
-                cookies.setAttribute("class", "cookies d-none")
-            });
+    
 
-            document.getElementById("no.").addEventListener("click", () => {
-                localStorage.setItem("cookies", false);
-                cookies.setAttribute("class", "cookies d-none")
-            });
-        }
-    }
-
-    addCookiesWindow();
-    document.getElementById("testCookies").addEventListener("click", () => {
-        localStorage.removeItem("cookies");
-        addCookiesWindow();
-    })
-
+    $("#modalCookies").modal("show");
+    
 };
 
 //<iframe src="https://www.youtube.com/embed/_R1nBwrNf2w" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
