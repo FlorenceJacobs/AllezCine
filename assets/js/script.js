@@ -53,13 +53,13 @@ window.onload = function() {
         });
         setTimeout(() => {
             console.log(film);
-            modal.innerHTML += `<iframe src="https://www.youtube.com/embed/_5f4515dfcee4810037a83d63" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            modal.innerHTML += ``;
             modal.innerHTML += `<h4>${film.title}</h4>`;
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Story Line :</h5><p>${film.overview}</p>`;
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Release On :</h5><p>${film.month} ${film.day}, ${film.year}</p>`;
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Genres :</h5><p>${film.genreNames.join(" | ")}</p>`;
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Price :</h5><p>${film.price}</p>`;
-        }, 500)
+        }, 700)
     }
 
     function addClickOnCards() {
@@ -187,37 +187,29 @@ window.onload = function() {
             document.getElementById("footerTable").innerHTML += `<img src="https://image.tmdb.org/t/p/w500${x.poster}" alt="No picture available :(">`
         });
     }, 500);
-    
+
 
     //fenêtre des cookies
-    if (localStorage.getItem("cookies") == null){
-        let cookies = document.createElement("DIV");
-        cookies.setAttribute("class", "cookies")
-        let p = document.createElement("P");
-        cookies.appendChild(p);
-        p.innerText = "This website needs cookies to keep track of your account settings and preferences and to perform at best. None of them will be sold nor used by other companies. You can access the data of your cookies at any time, and delete them at any time. Cookies aren't needed to visit the website.";
-        let q = document.createElement("P");
-        q.innerText = "Do you accept that we keep personal info about you in cookies ?";
-        cookies.appendChild(q);
-        let yes = document.createElement("BUTTON");
-        yes.setAttribute("value", "Yes");
-        cookies.appendChild(yes);
-        yes.addEventListener("click", () => {
-            localStorage.setItem("cookies", true);
-            cookies.setAttribute("class", "cookies d-none")
-        });
-        let no = document.createElement("BUTTON");
-        yes.setAttribute("value", "No");
-        cookies.appendChild(no);
-        no.addEventListener("click", () => {
-            localStorage.setItem("cookies", false);
-            cookies.setAttribute("class", "cookies d-none")
-        });
-        let worry = document.createElement("P");
-        worry.innerText = "(There actually aren't any cookies right now so don't worry)"
-        cookies.appendChild(worry);
-        document.body.appendChild(cookies);
+    function addCookiesWindow() {
+        if (localStorage.getItem("cookies") == null){
+
+            document.getElementById("yes").addEventListener("click", () => {
+                localStorage.setItem("cookies", true);
+                cookies.setAttribute("class", "cookies d-none")
+            });
+
+            document.getElementById("no.").addEventListener("click", () => {
+                localStorage.setItem("cookies", false);
+                cookies.setAttribute("class", "cookies d-none")
+            });
+        }
     }
+
+    addCookiesWindow();
+    document.getElementById("testCookies").addEventListener("click", () => {
+        localStorage.removeItem("cookies");
+        addCookiesWindow();
+    })
 
 };
 
