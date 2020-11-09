@@ -59,7 +59,7 @@ window.onload = function() {
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Release On :</h5><p>${film.month} ${film.day}, ${film.year}</p>`;
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Genres :</h5><p>${film.genreNames.join(" | ")}</p>`;
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Price :</h5><p>${film.price}</p>`;
-        }, 400)
+        }, 600)
     }
 
     function addClickOnCards() {
