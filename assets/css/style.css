@@ -43,7 +43,12 @@ h2:not(.captionH2) {
 }
 
 .modal {
-  color: black;
+  color: #4f5354;
+}
+
+.modal-footer button {
+  background-color: #FE4240;
+  color: white;
 }
 
 /*NAVIGATION*/
@@ -150,7 +155,7 @@ input.form-control {
   transition: all 0.2s ease-in-out;
 }
 .moviePlayingCard:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .card-img-top {
@@ -310,5 +315,9 @@ button.btnSubmit {
 }
 
 #footerList img {
-  width: 50%;
+  width: 25vh;
+  height: auto;
+  object-fit: cover;
+  object-position: 50% 50%;
+  padding-bottom: 0.5rem;
 }

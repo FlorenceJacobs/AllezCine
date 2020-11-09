@@ -143,36 +143,95 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body mx-3">
-                                                <div class="md-form mb-5">
+                                                <div class="md-form mb-3 d-flex align-items-center">
                                                 <i class="fas fa-user prefix"></i>
-                                                <input type="text" id="loginName" class="form-control validate">
-                                                <label data-error="wrong" data-success="right" for="loginName">Your name</label>
+                                                <input type="text" class="form-control ml-1" id="loginName" placeholder="User name">
                                                 </div>
-                                                <div class="md-form mb-5">
+                                                <div class="md-form mb-3 d-flex align-items-center">
                                                 <i class="fas fa-envelope prefix"></i>
-                                                <input type="email" id="loginEmail" class="form-control validate">
-                                                <label data-error="wrong" data-success="right" for="loginEmail">Your email</label>
+                                                <input type="email" id="loginEmail" class="form-control validate  ml-1" placeholder="Your email">
                                                 </div>
-                                                <div class="md-form mb-4">
+                                                <div class="md-form d-flex align-items-center">
                                                 <i class="fas fa-lock prefix"></i>
-                                                <input type="password" id="loginPassword" class="form-control validate">
-                                                <label data-error="wrong" data-success="right" for="loginPassword">Your password</label>
-                                                </div>
-                                                <div class="md-form mb-4">
-                                                <input type="password" id="confirmLoginPassword" class="form-control validate">
-                                                <label data-error="wrong" data-success="right" for="confirmLoginPassword">Confirm your password</label>
+                                                <input type="password" id="loginPassword" class="form-control validate  ml-1" placeholder="Your password">
                                                 </div>
                                             </div>
-                                        <div class="modal-footer d-flex justify-content-center">
-                                            <button class="btn btn-deep-orange">Sign up</button>
-                                        </div>
+                                            <div class="modal-footer d-flex justify-content-start">
+                                                <div class="col-6">
+                                                    <button class="btn w-50 mb-2">LOGIN</button>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-check mb-2">
+                                                        <input type="checkbox" class="form-check-input" id="stayConnected">
+                                                        <label class="form-check-label" for="stayConnected">Stay Connected</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer d-flex justify-content-start">
+                                                <div class="col-6">
+                                                    <button class="btn w-50">SIGN UP</button>
+                                                </div>
+                                                <div class="col-6" d-flex flex-column>
+                                                    <a herf="#">Password forgotten ?</a>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn w-25" data-dismiss="modal" aria-label="Close">CANCEL</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!--End Modal Login-->
                             </li>
                             <li class="nav-item">
-                                <a class="btn rounded-0 nav-link" href="#" role="button">REGISTER</a>
+                                <a class="btn rounded-0 nav-link" href="#" role="button" data-toggle="modal" data-target="#modalRegister">REGISTER</a>
                             </li>
+                            <!--Modal Register-->
+                            <div class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header text-center">
+                                            <h4 class="modal-title w-100 font-weight-bold">Register</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body mx-3">
+                                            <div class="md-form mb-3 d-flex align-items-center">
+                                            <i class="fas fa-user prefix"></i>
+                                            <input type="text" class="form-control ml-1" id="loginName" placeholder="User name">
+                                            </div>
+                                            <div class="md-form mb-3 d-flex align-items-center">
+                                            <i class="fas fa-envelope prefix"></i>
+                                            <input type="email" id="loginEmail" class="form-control validate  ml-1" placeholder="Your email">
+                                            </div>
+                                            <div class="md-form d-flex align-items-center">
+                                            <i class="fas fa-lock prefix"></i>
+                                            <input type="password" id="loginPassword" class="form-control validate  ml-1" placeholder="Your password">
+                                            </div>
+                                            <div class="md-form mb-2 d-flex align-items-center">
+                                            <i class="fas fa-lock prefix"></i>
+                                            <input type="password" id="confirmLoginPassword" class="form-control validate" placeholder="Confirm your password">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-start">
+                                            <div class="col-6">
+                                                <button class="btn w-50">SIGN UP</button>
+                                            </div>
+                                            <div class="col-6" d-flex flex-column>
+                                                <div class="form-check mb-2">
+                                                    <input type="checkbox" class="form-check-input" id="stayConnected">
+                                                    <label class="form-check-label" for="stayConnected">I agree with the conditions</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn w-25" data-dismiss="modal" aria-label="Close">CANCEL</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Modal Register-->
                         </ul>
                     </div>
                     <!--End Login-Navbar-->
