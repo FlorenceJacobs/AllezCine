@@ -193,9 +193,17 @@ window.onload = function() {
     $("#modalCookies").modal("show");
 
     //Canvas
-    //<canvas id="canvas" width="150" height="150"></canvas>
-    let arrow = document.createElement("BUTTON");
-    arrow.setAttribute("onclick", "topFunction()")
+
+    // arrow.setAttribute("onclick", "topFunction()")
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            arrow.style.display = "block";
+        } else {
+            arrow.style.display = "none";
+        }
+    };
+
+    let arrow = document.createElement("A");
     arrow.setAttribute("id", "arrow");
     arrow.setAttribute("href", "#");
     let canvas = document.createElement("CANVAS");
@@ -215,24 +223,11 @@ window.onload = function() {
     ctx.fillStyle = "white";
     ctx.fill();
     ctx.closePath();
-    arrow.appendChild(canvas)
+    arrow.appendChild(canvas);
     document.body.appendChild(arrow);
 
     window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    arrow.style.display = "block";
-  } else {
-    arrow.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
 };
 
 //<iframe src="https://www.youtube.com/embed/_R1nBwrNf2w" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
