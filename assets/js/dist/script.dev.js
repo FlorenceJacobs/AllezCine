@@ -212,8 +212,17 @@ window.onload = function () {
   }, 400); //fenêtre des cookies
 
   $("#modalCookies").modal("show"); //Canvas
+  //<canvas id="canvas" width="150" height="150"></canvas>
 
-  var ctx = document.getElementById("canvas").getContext("2d");
+  var arrow = document.createElement("BUTTON");
+  arrow.setAttribute("onclick", "topFunction()");
+  arrow.setAttribute("id", "arrow");
+  arrow.setAttribute("href", "#");
+  var canvas = document.createElement("CANVAS");
+  canvas.setAttribute("width", 150);
+  canvas.setAttribute("height", 150);
+  canvas.setAttribute("id", "canvas");
+  var ctx = canvas.getContext("2d");
   ctx.beginPath();
   ctx.moveTo(75, 20);
   ctx.lineTo(125, 75);
@@ -226,4 +235,25 @@ window.onload = function () {
   ctx.fillStyle = "white";
   ctx.fill();
   ctx.closePath();
+  arrow.appendChild(canvas);
+  document.body.appendChild(arrow);
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      arrow.style.display = "block";
+    } else {
+      arrow.style.display = "none";
+    }
+  } // When the user clicks on the button, scroll to the top of the document
+
+
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
 }; //<iframe src="https://www.youtube.com/embed/_R1nBwrNf2w" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
