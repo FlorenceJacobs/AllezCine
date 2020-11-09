@@ -136,8 +136,8 @@ window.onload = function() {
     incFilms++;
     queryFilm("popularity.desc", 0, incFilms, currentFeatured, "featuredList");
     queryFilm("vote_count.desc", 0, incFilms, currentShop, "shopList");
-    setTimeout(removeClickOnCards, 1000)
-    setTimeout(addClickOnCards, 1100);
+    removeClickOnCards();
+    setTimeout(addClickOnCards, 500);
 
 
     featuresButtons.forEach((x, i) => {
@@ -149,8 +149,8 @@ window.onload = function() {
             queryFilm("popularity.desc", x, incFilms, currentFeatured, "featuredList");
             incFilms++;
             queryFilm("popularity.desc", x, incFilms, currentFeatured, "featuredList");
-            setTimeout(removeClickOnCards, 1000)
-            setTimeout(addClickOnCards, 1100);
+            removeClickOnCards();
+            setTimeout(addClickOnCards, 500);
             document.getElementById("less").setAttribute("class", "btn d-none");
         });
     })
@@ -159,8 +159,8 @@ window.onload = function() {
         incFilms++;
         queryFilm("popularity.desc", currentGenre, incFilms, currentFeatured, "featuredList");
         document.getElementById("less").setAttribute("class", "btn");
-        setTimeout(removeClickOnCards, 1000)
-        setTimeout(addClickOnCards, 1100);
+        removeClickOnCards();
+        setTimeout(addClickOnCards, 500);
     })
 
     document.getElementById("less").addEventListener("click", () => {
@@ -173,8 +173,8 @@ window.onload = function() {
         });
         document.getElementById("less").setAttribute("class", "btn d-none");
         document.getElementById("more").setAttribute("class", "btn");
-        setTimeout(removeClickOnCards, 1000)
-        setTimeout(addClickOnCards, 1100);
+        removeClickOnCards();
+        setTimeout(addClickOnCards, 500);
     })
 
     //footer
