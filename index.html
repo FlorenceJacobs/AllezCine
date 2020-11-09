@@ -145,15 +145,15 @@
                                             <div class="modal-body mx-3">
                                                 <div class="md-form mb-3 d-flex align-items-center">
                                                 <i class="fas fa-user prefix"></i>
-                                                <input type="text" class="form-control ml-1" id="loginName" placeholder="User name">
+                                                <input type="text" class="form-control ml-1 border" id="loginName" placeholder="User name">
                                                 </div>
                                                 <div class="md-form mb-3 d-flex align-items-center">
                                                 <i class="fas fa-envelope prefix"></i>
-                                                <input type="email" id="loginEmail" class="form-control validate  ml-1" placeholder="Your email">
+                                                <input type="email" id="loginEmail" class="form-control validate border ml-1" placeholder="Your email">
                                                 </div>
                                                 <div class="md-form d-flex align-items-center">
                                                 <i class="fas fa-lock prefix"></i>
-                                                <input type="password" id="loginPassword" class="form-control validate  ml-1" placeholder="Your password">
+                                                <input type="password" id="loginPassword" class="form-control border validate  ml-1" placeholder="Your password">
                                                 </div>
                                             </div>
                                             <div class="modal-footer d-flex justify-content-start">
@@ -199,19 +199,19 @@
                                         <div class="modal-body mx-3">
                                             <div class="md-form mb-3 d-flex align-items-center">
                                             <i class="fas fa-user prefix"></i>
-                                            <input type="text" class="form-control ml-1" id="loginName" placeholder="User name">
+                                            <input type="text" class="form-control border ml-1" id="loginName" placeholder="User name">
                                             </div>
                                             <div class="md-form mb-3 d-flex align-items-center">
                                             <i class="fas fa-envelope prefix"></i>
-                                            <input type="email" id="loginEmail" class="form-control validate  ml-1" placeholder="Your email">
+                                            <input type="email" id="loginEmail" class="form-control border validate  ml-1" placeholder="Your email">
                                             </div>
                                             <div class="md-form d-flex align-items-center">
                                             <i class="fas fa-lock prefix"></i>
-                                            <input type="password" id="loginPassword" class="form-control validate  ml-1" placeholder="Your password">
+                                            <input type="password" id="loginPassword" class="form-control border validate  ml-1" placeholder="Your password">
                                             </div>
                                             <div class="md-form mb-2 d-flex align-items-center">
-                                            <i class="fas fa-lock prefix"></i>
-                                            <input type="password" id="confirmLoginPassword" class="form-control validate" placeholder="Confirm your password">
+                                            <i class="fas fa-lock prefix"></i> 
+                                            <input type="password" id="confirmLoginPassword" class="form-control border validate ml-1" placeholder="Confirm your password">
                                             </div>
                                         </div>
                                         <div class="modal-footer d-flex justify-content-start">
@@ -338,31 +338,27 @@
                             <div class="modal-body mx-3">
                                 <div class="md-form mb-5">
                                 <i class="fas fa-user prefix grey-text"></i>
-                                <input type="text" id="form34" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="form34">Your name</label>
+                                <input type="text" id="contactName" class="form-control border validate" placeholder="Your name">
                                 </div>
 
                                 <div class="md-form mb-5">
                                 <i class="fas fa-envelope prefix grey-text"></i>
-                                <input type="email" id="form29" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="form29">Your email</label>
+                                <input type="email" id="contactMail" class="form-control border validate" placeholder="Your email">
                                 </div>
 
                                 <div class="md-form mb-5">
                                 <i class="fas fa-tag prefix grey-text"></i>
-                                <input type="text" id="form32" class="form-control validate">
-                                <label data-error="wrong" data-success="right" for="form32">Subject</label>
+                                <input type="text" id="contactSubject" class="form-control border validate" placeholder="Subject">
                                 </div>
 
                                 <div class="md-form">
                                 <i class="fas fa-pencil prefix grey-text"></i>
-                                <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
-                                <label data-error="wrong" data-success="right" for="form8">Your message</label>
+                                <textarea type="text" id="contactMessage" class="md-textarea form-control" rows="4" placeholder="Your message"></textarea>
                                 </div>
 
                             </div>
                             <div class="modal-footer d-flex justify-content-center">
-                                <button class="btn btn-unique">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+                                <button class="btn btn-unique">SEND <i class="fab fa-telegram-plane"></i></button>
                             </div>
                             </div>
                         </div>
@@ -436,24 +432,24 @@
         </div>
         <!--bouton Modal Test-->
 
-        <!--Modal Test-->
+        <!--Modal Cookies-->
         <div class="modal fade" id="testexampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modalCards">
+                    ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                <div class="modal-body" id="modalCards">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
 
         <div class="modal fade" id="modalCookies" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -476,11 +472,11 @@
                 <p>(There actually aren't any cookies right now so don't worry)</p>
             </div>
             </div>
+            <!--End Modal Cookies-->
         </div>
         </div>
     </footer>
     
-
 
     <script type="text/javascript" src="assets/js/script.js"></script>
     <!-- Optional JavaScript -->
