@@ -343,3 +343,13 @@ button.btnSubmit {
   margin-right: 0.5rem;
 
 }
+
+/*Arrox Up*/
+#canvas{
+  width : 5rem;
+  border-style: solid;
+  border-radius: 50%;
+  border-color: $primaryColor;
+  border-width: 3px;
+  position : absolute;
+}

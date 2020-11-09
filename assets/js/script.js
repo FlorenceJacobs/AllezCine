@@ -191,7 +191,21 @@ window.onload = function() {
 
     //fenêtre des cookies
     $("#modalCookies").modal("show");
-    
+
+    //Canvas
+    let ctx = document.getElementById("canvas").getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(75, 20);
+    ctx.lineTo(125, 75);
+    ctx.lineTo(100, 75);
+    ctx.lineTo(100, 125);
+    ctx.lineTo(50, 125);
+    ctx.lineTo(50, 75);
+    ctx.lineTo(25, 75);
+    ctx.lineTo(75,20);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();
 };
 
 //<iframe src="https://www.youtube.com/embed/_R1nBwrNf2w" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
