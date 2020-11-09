@@ -46,6 +46,10 @@ h2:not(.captionH2) {
   padding-left: 1rem;
 }
 
+.modal {
+  color: black;
+}
+
 /*NAVIGATION*/
 
 nav.navbar {
@@ -253,6 +257,20 @@ input.form-control {
     background-color: white;
     border: solid 2px $primaryColor;
     color: $titleColor;
+  }
+}
+
+/*CONTACT US*/
+.boutonContact {
+  background-color: $primaryColor;
+  color: white;
+  border-radius: 0px;
+  border: none;
+  padding: 0.5rem;
+  &:hover {
+    background-color: white;
+    border : solid 2px $primaryColor;
+    color : $titleColor;
   }
 }
 

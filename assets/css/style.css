@@ -42,6 +42,10 @@ h2:not(.captionH2) {
   padding-left: 1rem;
 }
 
+.modal {
+  color: black;
+}
+
 /*NAVIGATION*/
 nav.navbar {
   position: absolute;
@@ -243,6 +247,20 @@ input.form-control {
   border-radius: 0;
 }
 #more:hover, #less:hover {
+  background-color: white;
+  border: solid 2px #FE4240;
+  color: #4f5354;
+}
+
+/*CONTACT US*/
+.boutonContact {
+  background-color: #FE4240;
+  color: white;
+  border-radius: 0px;
+  border: none;
+  padding: 0.5rem;
+}
+.boutonContact:hover {
   background-color: white;
   border: solid 2px #FE4240;
   color: #4f5354;
