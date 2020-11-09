@@ -318,7 +318,6 @@ button.btnSubmit {
 .ftIntersection {
   display:block;
   height : 2rem;
-  border-top: solid 1px rgb(121, 121, 121);
   border-bottom: solid 1px rgb(121, 121, 121);
 }
 
@@ -332,4 +331,14 @@ button.btnSubmit {
   object-fit: cover;
   object-position: 50% 50%;
   padding-bottom: 0.5rem;
+}
+
+.carre {
+  display: block;
+  border: 1px solid rgb(77, 77, 77);
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+
 }
