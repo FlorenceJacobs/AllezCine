@@ -47,7 +47,12 @@ h2:not(.captionH2) {
 }
 
 .modal {
-  color: black;
+  color: $titleColor;
+}
+
+.modal-footer button {
+  background-color: $primaryColor;
+  color : white;
 }
 
 /*NAVIGATION*/
@@ -318,5 +323,9 @@ button.btnSubmit {
 }
 
 #footerList img {
-    width: 50%;
+  width : 25vh;
+  height : auto;
+  object-fit: cover;
+  object-position: 50% 50%;
+  padding-bottom: 0.5rem;
 }
