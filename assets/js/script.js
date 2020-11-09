@@ -194,6 +194,9 @@ window.onload = function() {
 
     //Canvas
     //<canvas id="canvas" width="150" height="150"></canvas>
+    let arrow = document.createElement("A");
+    arrow.setAttribute("id", "arrow");
+    arrow.setAttribute("href", "#");
     let canvas = document.createElement("CANVAS");
     canvas.setAttribute("width", 150);
     canvas.setAttribute("height", 150);
@@ -211,7 +214,8 @@ window.onload = function() {
     ctx.fillStyle = "white";
     ctx.fill();
     ctx.closePath();
-    document.body.appendChild(canvas);
+    arrow.appendChild(canvas)
+    document.body.appendChild(arrow);
 };
 
 //<iframe src="https://www.youtube.com/embed/_R1nBwrNf2w" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
