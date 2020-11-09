@@ -193,7 +193,12 @@ window.onload = function() {
     $("#modalCookies").modal("show");
 
     //Canvas
-    let ctx = document.getElementById("canvas").getContext("2d");
+    //<canvas id="canvas" width="150" height="150"></canvas>
+    let canvas = document.createElement("CANVAS");
+    canvas.setAttribute("width", 150);
+    canvas.setAttribute("height", 150);
+    canvas.setAttribute("id", "canvas");
+    let ctx = canvas.getContext("2d");
     ctx.beginPath();
     ctx.moveTo(75, 20);
     ctx.lineTo(125, 75);
@@ -206,6 +211,7 @@ window.onload = function() {
     ctx.fillStyle = "white";
     ctx.fill();
     ctx.closePath();
+    document.body.appendChild(canvas);
 };
 
 //<iframe src="https://www.youtube.com/embed/_R1nBwrNf2w" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
