@@ -49,17 +49,17 @@ window.onload = function() {
             film.price = "Free";
         });
         fetch(`https://api.themoviedb.org/3/movie/${x.id}/videos?api_key=a05fba96f4d3bad807d07845d4896afb&language=en-US`).then(response => response.json()).then(data => {
-            data.results[0] == undefined ? film.youtube = undefined : film.youtube = data.results[0].id;
+            data.results[0] == undefined ? film.youtube = undefined : film.youtube = data.results[0].key;
         });
         setTimeout(() => {
             console.log(film);
-            modal.innerHTML += ``;
+            modal.innerHTML += `<iframe class="youtube" src="https://www.youtube.com/embed/${film.youtube}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
             modal.innerHTML += `<h4>${film.title}</h4>`;
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Story Line :</h5><p>${film.overview}</p>`;
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Release On :</h5><p>${film.month} ${film.day}, ${film.year}</p>`;
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Genres :</h5><p>${film.genreNames.join(" | ")}</p>`;
             modal.innerHTML += `<div class="d-flex justify-content-between"><h5>Price :</h5><p>${film.price}</p>`;
-        }, 1000)
+        }, 400)
     }
 
     function addClickOnCards() {
@@ -181,18 +181,15 @@ window.onload = function() {
     setTimeout(() => {(currentShop.slice(0,4)).forEach(x => {
             document.getElementById("footerList").innerHTML += `<li class="d-flex align-items-center justify-content-around"><img src="https://image.tmdb.org/t/p/w500${x.img}" class="col-6" alt="No picture available :("><p class="col-6">${x.name}</p></li>`
         });
-    }, 1000)
+    }, 400)
 
     setTimeout(() => {(currentFeatured.slice(0,6)).forEach(x => {
             document.getElementById("footerTable").innerHTML += `<img src="https://image.tmdb.org/t/p/w500${x.poster}" alt="No picture available :(">`
         });
-    }, 1000);
+    }, 400);
 
 
     //fenêtre des cookies
-
-    
-
     $("#modalCookies").modal("show");
     
 };
