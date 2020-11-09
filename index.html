@@ -333,7 +333,7 @@
                     <div>2019</div>
                     <div>2018</div>
                     <div>2017</div>
-                    <div>2016</div>
+                    <a data-toggle="modal" data-target="#modalCookies">2016</a>
                     <div>2015</div>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 d-fex flex-column">
@@ -375,13 +375,12 @@
             </div>
         </div>
         <!--bouton Modal Test-->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testexampleModalCenter"></button>Test Modal</button>
+
         <!--Modal Test-->
         <div class="modal fade" id="testexampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -395,6 +394,30 @@
               </div>
             </div>
           </div>
+
+        <div class="modal fade" id="modalCookies" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalCookiesBody">
+                <p>This website needs cookies to keep track of your account settings to perform at its best. None of them will be sold nor used by other companies. You can access the data of your cookies at any time, and delete them at any time. Cookies aren't needed to visit the website.</p>
+                <p>(Closing or ignoring this window will automatically refuse cookies)</p>
+                <p>Do you accept that we keep personal info about you in cookies ?</p> 
+                <div class="d-flex justify-content-around">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="yes">Sure</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="no">No, thanks</button>
+                </div>
+            </div>
+            <div class="modal-footer"> 
+                <p>(There actually aren't any cookies right now so don't worry)</p>
+            </div>
+            </div>
+        </div>
+        </div>
     </footer>
     
 
